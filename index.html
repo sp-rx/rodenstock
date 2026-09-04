@@ -36,22 +36,21 @@ body {
   width: 125%;
 }
 
-#backgroundSlideshow {
-  position: fixed;
-  top: 20%;
+#backgroundSlideshow {	
+  position: fixed ;
+  top: 20%; 
   left: 1%;
   width: 98%;
   height: auto;
-  z-index: 0;
   overflow: visible;
   pointer-events: none;
 }
 
 .bg-image {
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 1%;
+  width: 98%;
   height: auto;
   object-fit: contain;
 
@@ -668,11 +667,12 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
 
 <body>
 
+
 <div id="backgroundSlideshow">
-  <img class="bg-image active" src="https://sp-rx.github.io/rodenstock/bg1.jpg">
-  <img class="bg-image" src="https://sp-rx.github.io/rodenstock/bg2.jpg">
-  <img class="bg-image" src="https://sp-rx.github.io/rodenstock/bg3.jpg">
-  <img class="bg-image" src="https://sp-rx.github.io/rodenstock/bg4.jpg">
+  <img style="margin-top:30%; border-radius:2%" class="bg-image active" src="https://sp-rx.github.io/rodenstock/bg1.jpg">
+  <img style="margin-top:30%; border-radius:2%" class="bg-image" src="https://sp-rx.github.io/rodenstock/bg2.jpg">
+  <img style="margin-top:30%; border-radius:2%" class="bg-image" src="https://sp-rx.github.io/rodenstock/bg3.jpg">
+  <img style="margin-top:30%; border-radius:2%" class="bg-image" src="https://sp-rx.github.io/rodenstock/bg4.jpg">
 </div>
 
 <script>
@@ -706,12 +706,15 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
+
 <div class="hero">
   <div class="hero-inner">
     <div class="eyebrow-line"><span class="dot"></span>Lens Finder</div>
     <h1>Find the suitable lens for every eye.</h1>
     <p>Filter by vision type, material and technology to see more.</p>
   </div>
+
+
 </div>
 
 <div class="wrap">
@@ -743,6 +746,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
  
     <div style="display:none" id="note"></div>
+
 
   <div class="results-col">
     <div class="status">
