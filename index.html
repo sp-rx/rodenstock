@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rodenstock Lens Catalogue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#0F1B3C;
+  --navy-2:#182A52;
+  --blue:#0A4A82;
+  --teal:#5FC9BB;
+  --teal-dark:#3B9E92;
+  --paper:#FFFFFF;
+  --cloud:#F4F6F8;
+  --ink:#131A2E;
+  --muted:#66707E;
+  --line:#DCE2E8;
+  --line-dark:#2A3B66;
+}
+
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased}
+body{
+  margin:0;
+  background:var(--cloud);
+  color:var(--ink);
+  font-family:'Inter',Arial,sans-serif;
+}
+h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
+
+/* ---------- HERO ---------- */
+.hero{
+  background:linear-gradient(150deg,var(--navy) 0%,var(--navy-2) 55%,var(--blue) 100%);
+  color:#fff;
+  padding:52px 24px 64px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  right:-120px;
+  top:-140px;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+  border:1px solid rgba(95,201,187,.35);
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  right:-40px;
+  top:40px;
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  background:radial-gradient(circle at 30% 30%, rgba(95,201,187,.25), transparent 65%);
+}
+.hero-inner{max-width:1240px;margin:auto;position:relative}
+.eyebrow-line{
+  display:flex;align-items:center;gap:10px;
+  color:var(--teal);font-weight:600;font-size:13px;
+  letter-spacing:.03em;margin-bottom:18px;
+}
+.eyebrow-line span.dot{width:7px;height:7px;border-radius:50%;background:var(--teal);display:inline-block}
+.hero h1{
+  font-size:clamp(32px,4.4vw,52px);
+  font-weight:700;
+  line-height:1.05;
+  max-width:15ch;
+  letter-spacing:-.01em;
+}
+.hero p{
+  margin:16px 0 0;
+  color:#C9D3E4;
+  font-size:16px;
+  max-width:46ch;
+  line-height:1.55;
+}
+
+/* ---------- LAYOUT ---------- */
+.wrap{
+  max-width:1240px;
+  margin:-34px auto 60px;
+  padding:0 24px;
+  position:relative;
+  display:block;
+}
+
+/* ---------- FILTER PANEL ---------- */
+.panel{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:20px 22px;
+  box-shadow:0 18px 40px -20px rgba(15,27,60,.25);
+  margin-bottom:24px;
+}
+
+.panel .filter{
+  margin-bottom:16px;
+}
+
+.panel .filter:last-of-type{
+  margin-bottom:0;
+}
+.filter{margin-bottom:22px}
+.filter:last-of-type{margin-bottom:0}
+.filter h3{
+  flex:0 0 100px;
+  margin-top:3%;
+  margin-bottom:1%;
+
+}
+
+.filter .buttons{
+  flex:1;
+}
+.buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+}
+.btn{
+  border:1.5px solid var(--line);
+  background:#fff;
+  border-radius:20px;
+  padding:8px 14px;
+  cursor:pointer;
+  font-weight:600;
+  font-size:13.5px;
+  color:var(--navy);
+  transition:.15s ease;
+  font-family:'Inter',Arial,sans-serif;
+}
+.btn:hover{border-color:var(--teal-dark);color:var(--teal-dark)}
+.btn.active{
+  background:var(--navy);
+  border-color:var(--navy);
+  color:#fff;
+}
+.btn.active.teal{background:var(--teal-dark);border-color:var(--teal-dark)}
+
+.search-box{
+  flex:1;
+  width:100%;
+}
+
+.search{
+  width:100%;
+  border:1.5px solid var(--line);
+  border-radius:12px;
+  background:var(--cloud);
+  padding:10px 14px;
+  font-size:14px;
+  outline:none;
+  font-family:'Inter',Arial,sans-serif;
+  color:var(--ink);
+}
+.search:focus{border-color:var(--blue);background:#fff}
+
+.note{
+  padding:12px 14px;
+  border-radius:12px;
+  background:#EAF6F4;
+  border:1px solid #C9EAE4;
+  color:var(--navy);
+  font-weight:600;
+  font-size:13.5px;
+  margin-top:18px;
+}
+
+
+
+
+
+.attribute-guide{
+  margin:1% 0 1%;
+  padding:16px 18px;
+  background:var(--cloud);
+  border:1px solid var(--line);
+  border-radius:14px;
+}
+
+.attribute-guide-title{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:12px;
+}
+
+.attribute-guide-title span{
+  font-family:'Space Grotesk',Arial,sans-serif;
+  font-size:14px;
+  font-weight:700;
+  color:var(--navy);
+}
+
+.attribute-guide-title small{
+  font-size:10.5px;
+  color:var(--muted);
+}
+
+.attribute-buttons{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.attribute-category{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.attribute-category-title{
+  flex:0 0 120px;
+
+  font-size:10px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+
+  color:var(--muted);
+}
+
+.attribute-category-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+}
+
+.attribute-btn{
+  border:1px solid var(--line);
+  background:var(--paper);
+  color:var(--navy);
+  border-radius:20px;
+  padding:7px 12px;
+  cursor:pointer;
+
+  font-family:'Inter',Arial,sans-serif;
+  font-size:11px;
+  font-weight:700;
+
+  transition:.15s ease;
+}
+
+.attribute-btn:hover{
+  border-color:var(--teal-dark);
+  color:var(--teal-dark);
+}
+
+.attribute-btn.active{
+  background:var(--navy);
+  border-color:var(--navy);
+  color:#fff;
+}
+
+
+/* ---------- DESCRIPTION ---------- */
+
+.attribute-description{
+  margin-top:12px;
+  padding:14px 16px;
+
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:12px;
+
+  min-height:82px;
+
+  transition:opacity .15s ease;
+}
+
+.attribute-placeholder{
+  color:var(--muted);
+  font-size:11px;
+  text-align:center;
+  padding:12px 0;
+}
+
+
+/* Description content */
+
+.attribute-name{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  margin-bottom:8px;
+}
+
+.attribute-code{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:4px 7px;
+  border-radius:6px;
+
+  background:var(--navy);
+  color:#fff;
+
+  font-size:10px;
+  font-weight:700;
+}
+
+.attribute-full-name{
+  font-family:'Space Grotesk',Arial,sans-serif;
+  font-size:14px;
+  font-weight:700;
+  color:var(--navy);
+}
+
+.attribute-details{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.attribute-detail{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+
+.attribute-detail-label{
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+  font-weight:700;
+  color:var(--muted);
+}
+
+.attribute-detail-text{
+  font-size:11px;
+  line-height:1.4;
+  color:var(--ink);
+}
+
+
+
+
+
+
+
+
+
+/* ---------- RESULTS ---------- */
+.results-col{min-width:0}
+.status{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  margin:0 0 16px;
+  color:var(--muted);
+  font-size:14px;
+}
+.count{font-weight:700;color:var(--ink);font-family:'Space Grotesk',Arial,sans-serif}
+
+.results{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+
+.card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:20px;
+  position:relative;
+  overflow:hidden;
+  transition:border-color .15s ease, transform .15s ease;
+}
+.card::before{
+  content:"";
+  position:absolute;
+  left:0;top:0;bottom:0;
+  width:4px;
+  background:linear-gradient(180deg,var(--teal),var(--blue));
+}
+.card:hover{border-color:var(--blue)}
+
+.type-tag{
+  display:inline-block;
+  font-size:10.5px;
+  font-weight:700;
+  letter-spacing:.05em;
+  color:var(--teal-dark);
+  background:#EAF6F4;
+  border-radius:6px;
+  padding:3px 8px;
+  margin-bottom:10px;
+}
+.card h2{
+  font-size:18px;
+  font-weight:600;
+  margin:0 0 4px;
+  color:var(--navy);
+  line-height:1.25;
+}
+.meta{font-size:12.5px;color:var(--muted);margin-bottom:14px}
+
+.prices{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+.price{
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:9px 4px;
+  text-align:center;
+  background:var(--cloud);
+}
+.price b{
+  display:block;
+  font-size:10px;
+  color:var(--muted);
+  margin-bottom:4px;
+  font-weight:700;
+  letter-spacing:.02em;
+}
+.price span{font-weight:700;font-size:13.5px;color:var(--ink)}
+.na{color:#B7BEC8}
+
+.tech{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:16px;
+}
+
+.tech-group{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:6px;
+}
+
+.tech-label{
+  width:100%;
+  font-size:9.5px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:1px;
+}
+
+.tech-items{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:40px;
+  height:26px;
+  padding:0 9px;
+  border-radius:14px;
+
+  background:var(--navy);
+  color:#fff;
+
+  font-size:10.5px;
+  font-weight:700;
+  letter-spacing:.02em;
+
+  transition:opacity .15s ease, background .15s ease;
+}
+
+.badge.muted{
+  background:transparent;
+  color:var(--muted);
+  border:1px solid var(--line);
+  opacity:.35;
+}
+
+.badge.fdt{
+  background:var(--teal-dark);
+}
+
+.badge.fdt.muted{
+  background:transparent;
+  color:var(--muted);
+  border:1px solid var(--line);
+  opacity:.35;
+}
+
+.loading,.empty{
+  text-align:center;
+  padding:60px 20px;
+  color:var(--muted);
+  background:var(--paper);
+  border:1px dashed var(--line);
+  border-radius:16px;
+  grid-column:1/-1;
+  font-size:14.5px;
+}
+.error{
+  color:#9b1c1c;
+  background:#FBEAE8;
+  border:1px solid #F2C9C4;
+  padding:16px;
+  border-radius:12px;
+  grid-column:1/-1;
+}
+
+@media(max-width:860px){
+
+  .wrap{
+    margin-top:-24px;
+  }
+
+  .panel{
+    position:relative;
+    top:0;
+  }
+
+  .hero{
+    padding:40px 20px 52px;
+  }
+
+}
+
+
+@media(max-width:560px){
+  .results{grid-template-columns:1fr}
+  .prices{grid-template-columns:repeat(2,1fr)}
+  .attribute-details{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+
+  .attribute-guide-title{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:3px;
+  }
+
+
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow-line"><span class="dot"></span>Lens Finder</div>
+    <h1>Find the suitable lens for every eye.</h1>
+    <p>Filter by vision type, material and technology to see more.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="panel">
+
+    <div class="filter">
+
+      <h3 style="margin-top:10px">Vision Type</h3>
+      <div class="buttons" id="visionButtons"></div>
+    </div>
+
+    <div class="filter">
+      <h3>Material</h3>
+      <div class="buttons" id="materialButtons"></div>
+    </div>
+
+    <div id="conditionalFilters"></div>
+
+
+    <div class="filter">
+      <h3>Search</h3>
+      <div class="search-box">
+        <input class="search" id="search" placeholder="Search product or material…">
+      </div>
+    </div>
+
+
+
+
+
+<div class="attribute-guide">
+
+  <div class="attribute-guide-title">
+    <span>Click an attribute to learn more</span>
+  </div>
+
+  <div class="attribute-buttons">
+
+<div class="attribute-buttons">
+
+  <div class="attribute-category">
+    <div class="attribute-category-title">
+      Overall Clarity
+    </div>
+
+    <div class="attribute-category-buttons">
+      <button class="attribute-btn" onclick="showAttribute('3DFF')">
+        3D
+      </button>
+
+      <button class="attribute-btn" onclick="showAttribute('21BC')">
+        21BC
+      </button>
+
+      <button class="attribute-btn" onclick="showAttribute('INDILT')">
+        INDILT
+      </button>
+
+      <button class="attribute-btn" onclick="showAttribute('PO')">
+        PO
+      </button>
+
+      <button class="attribute-btn" onclick="showAttribute('BIGN')">
+        BIGN
+      </button>
+    </div>
+  </div>
+
+
+  <div class="attribute-category">
+    <div class="attribute-category-title">
+      Near Vision / PAL
+    </div>
+
+    <div class="attribute-category-buttons">
+      <button class="attribute-btn" onclick="showAttribute('EYELT')">
+        EyeLT
+      </button>
+
+      <button class="attribute-btn" onclick="showAttribute('RFP')">
+        RFP
+      </button>
+
+      <button class="attribute-btn" onclick="showAttribute('PDOI')">
+        PDOI
+      </button>
+
+      <button class="attribute-btn" onclick="showAttribute('FDT')">
+        FDT
+      </button>
+    </div>
+  </div>
+
+</div>
+
+  </div>
+
+  <div id="attributeDescription" class="attribute-description">
+    <div class="attribute-placeholder">
+      Select an attribute above
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+    <div style="display:none" id="note"></div>
+
+  <div class="results-col">
+    <div class="status">
+      <span id="resultInfo"></span>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="results" id="results">
+      <div class="loading">Loading catalogue…</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+
+/* ATTRIBUTE GUIDE */
+
+const attributeInfo={
+
+  EYELT:{
+    name:"Eye Lens Technology",
+    function:"Optics Calculation which Compensates for Lens Tilting at the Near Zone.",
+    benefit:"Clearer and Higher Definition of Near Vision."
+  },
+
+  "3DFF":{
+    name:"3D Free Form",
+    function:"Advance Manufacturing Method which is Able to be Precise and Demanding.",
+    benefit:"Every Prescription and Frame are Optimized to have the Best Experience in Clarity & View."
+  },
+
+  RFP:{
+    name:"Retina Focus Principle",
+    function:"Optics Calculation which Compensates for the Downward Progression of Addition.",
+    benefit:"Smoother and Larger Progression of Near Vision."
+  },
+
+  "21BC":{
+    name:"21 Base Curve",
+    function:"Larger Array of Lens Blank to Cater to Any Prescription.",
+    benefit:"Every Lens is Optimized for Swim Effect, Magnification and Clarity."
+  },
+
+  PDOI:{
+    name:"PD Optimized Inset",
+    function:"Customized Near Zone Positioning for Different Wearers.",
+    benefit:"Offers the Widest Near Zone at Your Preferred Position."
+  },
+
+  FDT:{
+    name:"Flexible Design Technology",
+    function:"Lenses Re-Designed to have Wider Far or Near Vision.",
+    benefit:"Customized Your Vision According to Your Needs."
+  },
+
+  INDILT:{
+    name:"Individual Lens Technology",
+    function:"Compensates for the Spectacle's Tilt, Wrap and Distance from the Eye.",
+    benefit:"See as Clear as Possible by Reducing Errors Caused by Spectacles Position."
+  },
+
+  PO:{
+    name:"Pupil Optimization",
+    function:"Prescription is Calculated Based Pupil Size to Reduce Abberations.",
+    benefit:"Improves Clarity during Low Light, When Pupils are Larger."
+  },
+
+  BIGN:{
+    name:"Big Norm",
+    function:"Optical Calculation to Compensate for Every Eye's Rotation Angle, Size and Thickness.",
+    benefit:"A Further Advancement to Achieve Optimized and Natural Vision for Every Prescription."
+  }
+
+};
+
+
+function showAttribute(key){
+
+const attributeImages = [
+  "3DFF",
+  "21BC",
+  "INDILT",
+  "PO",
+  "BIGN",
+  "EYELT",
+  "RFP",
+  "PDOI",
+  "FDT"
+];
+
+attributeImages.forEach(key => {
+  const img = new Image();
+  img.src = `https://sp-rx.github.io/rodenstock/${key}.jpg`;
+});
+
+  const info = attributeInfo[key];
+
+  if(!info) return;
+
+  /* Remove active state from all buttons */
+
+  document
+    .querySelectorAll(".attribute-btn")
+    .forEach(btn => btn.classList.remove("active"));
+
+
+  /* Activate clicked button */
+
+  const buttons = document.querySelectorAll(".attribute-btn");
+
+  buttons.forEach(btn => {
+
+    const label = btn.textContent.trim();
+
+    const code =
+      label === "3D" ? "3DFF" :
+      label === "EyeLT" ? "EYELT" :
+      label;
+
+    if(code === key){
+      btn.classList.add("active");
+    }
+
+  });
+
+
+  /* Build description */
+
+  document.getElementById("attributeDescription").innerHTML = `
+
+    <div class="attribute-name">
+
+      <span class="attribute-code">
+        ${key === "3DFF" ? "3D" : key}
+      </span>
+
+      <span class="attribute-full-name">
+        ${info.name}
+      </span>
+
+    </div>
+
+
+    <div class="attribute-details">
+
+      <div class="attribute-detail">
+
+        <span class="attribute-detail-label">
+          What it does
+        </span>
+
+        <span class="attribute-detail-text">
+          ${info.function}
+        </span>
+
+      </div>
+
+
+      <div class="attribute-detail">
+
+        <span class="attribute-detail-label">
+          Benefit
+        </span>
+
+        <span class="attribute-detail-text">
+          ${info.benefit}
+        </span>
+
+      </div>
+
+    </div>
+
+
+<img style="margin-top:5%; margin-bottom:3%; width:100%" src="https://sp-rx.github.io/rodenstock/${key}.jpg" alt="${key}" class="attribute-image" >
+
+  `;
+}
+
+
+const CSV_URL="https://sp-rx.github.io/rodenstock/roden.csv";
+const visionTypes = ["SV", "PAL", "AF", "NPAL", "MYO"];
+
+const visionLabels = {
+  SV: "SINGLE VISION",
+  PAL: "PROGRESSIVE",
+  AF: "ANTI-FATIGUE",
+  NPAL: "NEAR PROGRESSIVE",
+  MYO: "MYOPIA CONTROL"
+};
+
+
+const materials=[
+"UV 400",
+"PRO 410",
+"COLORMATIC",
+"COLORMATIC SUN",
+"POLARISED",
+"ROAD"
+];
+
+const filterDefinitions={
+clarity:[["BIGN","BIGN"],["21BC","21BC"],["INDILT","INDILT"],["PO","PO"]],
+nearVision:[["EYELT","EYELT"],["RFP","RFP"],["PDOI","PDOI"]],
+palDesign:[["FDT","FDT"]]
+};
+
+let lenses=[];
+let selectedType="";
+let selectedMaterial="";
+
+let selected={
+clarity:new Set(),
+nearVision:new Set(),
+palDesign:new Set()
+};
+
+
+/* CSV */
+
+function parseCSV(text){
+const rows=[],re=/(?:"([^"]*(?:""[^"]*)*)"|([^,]*))(?:,|$)/g;
+
+text.trim().split(/\r?\n/).forEach(line=>{
+const row=[];let m;re.lastIndex=0;
+
+while((m=re.exec(line))!==null){
+row.push((m[1]??m[2]??"").replace(/""/g,'"').trim());
+if(re.lastIndex===line.length)break;
+}
+
+rows.push(row);
+});
+
+const headers=rows.shift();
+
+return rows
+.filter(r=>r.some(v=>v!==""))
+.map(r=>Object.fromEntries(headers.map((h,i)=>[h,r[i]??""])));
+}
+
+
+/* TECHNOLOGY */
+
+function hasTech(lens,key){
+return String(lens[key]||"").trim().toUpperCase()==="Y";
+}
+
+function hasFDT(lens){
+const value=String(lens.FDT||"").trim().toUpperCase();
+return value!=="N"&&value!=="-"&&value!=="";
+}
+
+
+/* BUTTON */
+
+function button(label,active,click,tealVariant){
+return `<button class="btn ${active?"active":""} ${active&&tealVariant?"teal":""}" onclick='${click}'>${label}</button>`;
+}
+
+
+/* VISION TYPE - EXCLUSIVE */
+
+function renderVision(){
+  document.getElementById("visionButtons").innerHTML =
+    visionTypes.map(type => {
+      const active = selectedType === type;
+      return button(
+        visionLabels[type] || type,
+        active,
+        `selectedType="${type}";render()`
+      );
+    }).join("");
+}
+
+
+/* MATERIAL - EXCLUSIVE */
+
+function renderMaterial(){
+document.getElementById("materialButtons").innerHTML=
+materials.map(material=>{
+const active=selectedMaterial===material;
+return button(
+material,
+active,
+`selectedMaterial="${material}";render()`,
+true
+);
+}).join("");
+}
+
+
+/* OTHER FILTERS - UNCHANGED MULTI SELECT */
+
+function toggle(set,key){
+set.has(key)?set.delete(key):set.add(key);
+render();
+}
+
+function filterGroup(title,key,items){
+return `
+<div class="filter">
+<h3>${title}</h3>
+<div class="buttons">
+${items.map(([k,label])=>{
+const active=selected[key].has(k);
+return button(
+label,
+active,
+`toggle(selected["${key}"],"${k}")`,
+true
+);
+}).join("")}
+</div>
+</div>
+`;
+}
+
+
+/* CONDITIONAL FILTERS */
+
+function renderConditional(){
+
+const el=document.getElementById("conditionalFilters");
+
+if(!selectedType){
+el.innerHTML="";
+return;
+}
+
+let html=filterGroup(
+"Clarity",
+"clarity",
+filterDefinitions.clarity
+);
+
+if(["PAL","AF","NPAL"].includes(selectedType)){
+html+=filterGroup(
+"Near Vision Enhancement",
+"nearVision",
+filterDefinitions.nearVision
+);
+}
+
+if(selectedType==="PAL"){
+html+=filterGroup(
+"PAL Design",
+"palDesign",
+filterDefinitions.palDesign
+);
+}
+
+el.innerHTML=html;
+}
+
+
+/* MATCHING */
+
+function matches(lens){
+
+if(!selectedType||!selectedMaterial)return false;
+
+if(lens.TYPE!==selectedType)return false;
+
+if(lens.MATERIAL!==selectedMaterial)return false;
+
+const q=document.getElementById("search").value.trim().toLowerCase();
+
+if(q&&!(`${lens.PRODUCT} ${lens.MATERIAL}`.toLowerCase().includes(q))){
+return false;
+}
+
+for(const key of selected.clarity){
+if(!hasTech(lens,key))return false;
+}
+
+for(const key of selected.nearVision){
+if(!hasTech(lens,key))return false;
+}
+
+if(selected.palDesign.has("FDT")&&!hasFDT(lens)){
+return false;
+}
+
+return true;
+}
+
+
+/* TECHNOLOGY TAGS */
+
+function techTags(lens){
+
+  /*
+   * Which attribute groups are relevant to each vision type.
+   *
+   * SV:
+   *   Clarity + 3D
+   *
+   * PAL:
+   *   Clarity + Near Vision + PAL Design + 3D
+   *
+   * AF:
+   *   Clarity + Near Vision + 3D
+   *
+   * NPAL:
+   *   Clarity + Near Vision + 3D
+   *
+   * MYO:
+   *   Clarity + 3D
+   */
+
+const clarity=[
+  ["BIGN","BIGN"],
+  ["21BC","21BC"],
+  ["INDILT","INDILT"],
+  ["PO","PO"],
+  ["3DFF","3D"]
+];
+
+  const nearVision=[
+    ["EYELT","EyeLT"],
+    ["RFP","RFP"],
+    ["PDOI","PDOI"]
+  ];
+
+  const palDesign=[
+    ["FDT","FDT"]
+  ];
+
+
+
+  /* Build one attribute group */
+
+  function group(title,items){
+
+    const badges=items.map(([key,label])=>{
+
+      let active=false;
+
+      if(key==="FDT"){
+        active=hasFDT(lens);
+      }else{
+        active=hasTech(lens,key);
+      }
+
+      return `
+        <span class="badge ${key==="FDT"?"fdt ":""}${active?"":"muted"}">
+          ${key==="FDT" && active ? `FDT ${lens.FDT}` : label}
+        </span>
+      `;
+    }).join("");
+
+    return `
+      <div class="tech-group">
+        <div class="tech-label">${title}</div>
+        <div class="tech-items">
+          ${badges}
+        </div>
+      </div>
+    `;
+  }
+
+
+  let html="";
+
+
+  /* CLARITY — relevant to all vision types */
+
+  html+=group("Clarity",clarity);
+
+
+  /* NEAR VISION — PAL / AF / NPAL only */
+
+  if(["PAL","AF","NPAL"].includes(lens.TYPE)){
+    html+=group("Near Vision",nearVision);
+  }
+
+
+  /* PAL DESIGN — PAL only */
+
+  if(lens.TYPE==="PAL"){
+    html+=group("PAL Design",palDesign);
+  }
+  return html;
+}
+
+
+/* PRICE */
+
+function formatPrice(value){
+if(value==="-"||!value)return `<span class="na">—</span>`;
+return `<span>RM ${Number(value).toLocaleString()}</span>`;
+}
+
+
+/* CARD */
+function visionLabel(type){
+return {
+SV:"SINGLE VISION",
+PAL:"PROGRESSIVE",
+AF:"ANTI-FATIGUE",
+NPAL:"NEAR PROGRESSIVE",
+MYO:"MYOPIA CONTROL"
+}[type]||type;
+}
+
+function materialLabel(material){
+return material==="PRO 410"?"PRO410":material;
+}
+
+
+function card(lens){
+
+const indexes=[
+["1.5",lens["1.5"]],
+["1.6",lens["1.6"]],
+["1.67",lens["1.67"]],
+["1.74",lens["1.74"]]
+];
+
+return `
+<article class="card">
+
+<h2>${visionLabel(lens.TYPE)} ${lens.PRODUCT}<br> ${materialLabel(lens.MATERIAL)}</h2>
+
+<div style="margin-top:2%" class="prices">
+
+${indexes.map(([index,value])=>`
+<div class="price">
+<b>${index} INDEX</b>
+${formatPrice(value)}
+</div>
+`).join("")}
+
+</div>
+
+<div class="tech">
+${techTags(lens)}
+</div>
+
+</article>
+`;
+}
+
+
+/* RESULTS */
+
+function renderResults(){
+
+const results=lenses.filter(matches);
+const resultsEl=document.getElementById("results");
+
+let message="";
+
+if(!selectedType){
+message="Select a vision type to begin";
+}
+else if(!selectedMaterial){
+message="Select a material to see matching lenses";
+}
+
+document.getElementById("note").innerHTML=
+message?`<div class="note">${message}</div>`:"";
+
+document.getElementById("count").textContent=
+selectedType&&selectedMaterial
+?`${results.length} lens${results.length===1?"":"es"} found`
+:"";
+
+if(!selectedType||!selectedMaterial){
+
+resultsEl.innerHTML=
+`<div class="loading">Select a vision type and material to begin.</div>`;
+
+return;
+}
+
+resultsEl.innerHTML=results.length
+?results.map(card).join("")
+:`<div class="empty">No lenses match the selected filters.</div>`;
+}
+
+
+/* RENDER */
+
+function render(){
+
+renderVision();
+renderMaterial();
+renderConditional();
+renderResults();
+
+}
+
+
+/* SEARCH */
+
+document.getElementById("search").addEventListener(
+"input",
+renderResults
+);
+
+
+/* LOAD CSV */
+
+fetch(CSV_URL)
+
+.then(response=>{
+if(!response.ok)throw new Error("Could not retrieve roden.csv");
+return response.text();
+})
+
+.then(text=>{
+lenses=parseCSV(text);
+render();
+})
+
+.catch(error=>{
+document.getElementById("results").innerHTML=
+`<div class="error">${error.message}. Check that the CSV is publicly accessible on GitHub.</div>`;
+});
+
+</script>
+
+</body>
+</html>
