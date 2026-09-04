@@ -1,77 +1,77 @@
-PRODUCT,TYPE,MATERIAL,1.5,1.6,1.67,1.74,EYELT,3DFF,RFP,21BC,PDOI,PO,FDT,INDILT,BIGN,,Code,Technology,Primary optimization,Simple consumer meaning
-MYCON 2 INDIVIDUAL,MYO,UV 400,1945,2130,2645,3750,N,Y,N,Y,N,N,N,Y,N,,EYELT,Eye Lens Technology,Near-zone lens tilt compensation,Sharper near vision
-MYCON 2 INDIVIDUAL,MYO,PRO 410,-,-,-,-,N,Y,N,Y,N,N,N,Y,N,,3DFF,3D Free Form,Prescription-specific lens manufacturing,Lens individually optimized for the prescription
-MYCON 2 INDIVIDUAL,MYO,COLORMATIC,2570,3060,3450,-,N,Y,N,Y,N,N,N,Y,N,,RFP,Retina Focus Principle,Progression/depth compensation,Smoother progression into near
-MYCON 2 INDIVIDUAL,MYO,COLORMATIC SUN,-,3160,-,-,N,Y,N,Y,N,N,N,Y,N,,21BC,21 Base Curve,Prescription-specific curvature,More consistent visual experience across prescriptions
-MYCON 2 INDIVIDUAL,MYO,POLARISED,-,3060,-,-,N,Y,N,Y,N,N,N,N,N,,PDOI,PD Optimized Inset,Near-zone positioning,Near vision positioned for preferred reading distance
-MYCON,MYO,UV 400,1445,1630,2145,3250,N,Y,N,N,N,N,N,N,N,,FDT,Flexible Design Technology,Distribution of usable visual areas,More far / near / balanced vision according to preference
-MYCON,MYO,PRO 410,-,1830,2345,-,N,Y,N,N,N,N,N,N,N,,INDILT,Individual Lens Technology,"Tilt, wrap, eye distance",Optics personalized to how the glasses sit on the face
-MYCON,MYO,COLORMATIC,2070,2560,2950,-,N,Y,N,N,N,N,N,N,N,,PO,Pupil Optimization,Pupil-size-dependent optical performance,Optics optimized around the wearer's pupil
-IMPRESSION BIG NORM,PAL,UV 400,4250,4600,5000,6500,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",Y,Y,,BIGN,Big Norm,Eye-specific physiological/optical modeling,Further optimization based on how different eyes actually
-IMPRESSION BIG NORM,PAL,PRO 410,-,4800,5200,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",Y,Y,,,,,
-IMPRESSION BIG NORM,PAL,COLORMATIC,5050,5400,5800,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",Y,Y,,,,,
-IMPRESSION BIG NORM,PAL,COLORMATIC SUN,-,5500,-,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",Y,Y,,,,,
-IMPRESSION BIG NORM,PAL,POLARISED,-,5400,-,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",Y,Y,,,,,
-IMPRESSION BIG NORM,PAL,ROAD,4450,4800,5200,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",Y,Y,,,,,
-MULTIGRESSIV BIG NORM,PAL,UV 400,3700,4050,4450,5950,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",N,Y,,,,,
-MULTIGRESSIV BIG NORM,PAL,PRO 410,-,4250,4650,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",N,Y,,,,,
-MULTIGRESSIV BIG NORM,PAL,COLORMATIC,4500,4850,5250,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",N,Y,,,,,
-MULTIGRESSIV BIG NORM,PAL,COLORMATIC SUN,-,4950,-,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",N,Y,,,,,
-MULTIGRESSIV BIG NORM,PAL,POLARISED,-,4850,-,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",N,Y,,,,,
-MULTIGRESSIV BIG NORM,PAL,ROAD,3900,4250,4650,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",N,Y,,,,,
-IMPRESSION 2,PAL,UV 400,3400,3800,4200,-,Y,Y,Y,Y,Y,Y,Balance,Y,N,,,,,
-IMPRESSION 2,PAL,PRO 410,-,4000,4400,-,Y,Y,Y,Y,Y,Y,Balance,Y,N,,,,,
-IMPRESSION 2,PAL,COLORMATIC,4200,4600,5000,-,Y,Y,Y,Y,Y,Y,Balance,Y,N,,,,,
-MULTIGRESSIV MYLIFE 2,PAL,UV 400,3100,3500,3900,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",N,N,,,,,
-MULTIGRESSIV MYLIFE 2,PAL,PRO 410,-,3700,4100,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",N,N,,,,,
-MULTIGRESSIV MYLIFE 2,PAL,COLORMATIC,3900,4300,4700,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",N,N,,,,,
-MULTIGRESSIV MYVIEW 2,PAL,UV 400,2800,3200,3600,-,Y,Y,Y,Y,Y,N,Balance,N,N,,,,,
-MULTIGRESSIV MYVIEW 2,PAL,PRO 410,-,3400,3800,-,Y,Y,Y,Y,Y,N,Balance,N,N,,,,,
-MULTIGRESSIV MYVIEW 2,PAL,COLORMATIC,3600,4000,4400,-,Y,Y,Y,Y,Y,N,Balance,N,N,,,,,
-PURELIFE FREE 2,PAL,UV 400,2100,2500,2900,-,Y,Y,Y,Y,N,N,Balance,N,N,,,,,
-PURELIFE FREE 2,PAL,PRO 410,-,2700,3100,-,Y,Y,Y,Y,N,N,Balance,N,N,,,,,
-PURELIFE FREE 2,PAL,COLORMATIC,2900,3300,3700,-,Y,Y,Y,Y,N,N,Balance,N,N,,,,,
-LIFE FREE 2,PAL,UV 400,1700,2100,2500,-,Y,Y,Y,N,N,N,Balance,N,N,,,,,
-LIFE FREE 2,PAL,PRO 410,-,2300,2700,-,Y,Y,Y,N,N,N,Balance,N,N,,,,,
-LIFE FREE 2,PAL,COLORMATIC,2500,2900,3300,-,Y,Y,Y,N,N,N,Balance,N,N,,,,,
-IMPRESSION BIG NORM ERGO,NPAL,UV 400,3650,4000,4400,5900,Y,Y,Y,Y,Y,Y,N,Y,Y,,,,,
-IMPRESSION BIG NORM ERGO,NPAL,PRO 410,-,4200,4600,-,Y,Y,Y,Y,Y,Y,N,Y,Y,,,,,
-MULTIGRESSIV BIG NORM ERGO,NPAL,UV 400,3050,3400,3800,5300,Y,Y,Y,Y,Y,Y,N,N,Y,,,,,
-MULTIGRESSIV BIG NORM ERGO,NPAL,PRO 410,-,3600,4000,-,Y,Y,Y,Y,Y,Y,N,N,Y,,,,,
-MULTIGRESSIV ERGO 2,NPAL,UV 400,2300,2700,3100,-,Y,Y,Y,Y,Y,N,N,N,N,,,,,
-MULTIGRESSIV ERGO 2,NPAL,PRO 410,-,2900,3300,-,Y,Y,Y,Y,Y,N,N,N,N,,,,,
-PROGRESSIV ERGO 2,NPAL,UV 400,1700,2100,2500,-,Y,Y,Y,N,N,N,N,N,N,,,,,
-PROGRESSIV ERGO 2,NPAL,PRO 410,-,2300,2700,-,Y,Y,Y,N,N,N,N,N,N,,,,,
-IMPRESSION BIG NORM MONO,SV,UV 400,3350,3700,4100,5600,N,Y,Y,Y,N,Y,N,Y,Y,,,,,
-IMPRESSION BIG NORM MONO,SV,PRO 410,-,3900,4300,-,N,Y,Y,Y,N,Y,N,Y,Y,,,,,
-IMPRESSION BIG NORM MONO,SV,COLORMATIC,4150,4500,4900,-,N,Y,Y,Y,N,Y,N,Y,Y,,,,,
-IMPRESSION BIG NORM MONO,SV,COLORMATIC SUN,-,4600,-,-,N,Y,Y,Y,N,Y,N,Y,Y,,,,,
-IMPRESSION BIG NORM MONO,SV,POLARISED,-,4500,-,-,N,Y,Y,Y,N,Y,N,Y,Y,,,,,
-IMPRESSION BIG NORM MONO,SV,ROAD,3550,4070,4120,-,N,Y,Y,Y,N,Y,N,Y,Y,,,,,
-IMPRESSION BIG NORM MONO PLUS,AF,UV 400,3600,3950,4350,5850,Y,Y,Y,Y,N,Y,N,Y,Y,,,,,
-IMPRESSION BIG NORM MONO PLUS,AF,PRO 410,-,4150,4550,-,Y,Y,Y,Y,N,Y,N,Y,Y,,,,,
-IMPRESSION BIG NORM MONO PLUS,AF,COLORMATIC,4400,4750,5150,-,Y,Y,Y,Y,N,Y,N,Y,Y,,,,,
-IMPRESSION BIG NORM MONO PLUS,AF,COLORMATIC SUN,-,4850,-,-,Y,Y,Y,Y,N,Y,N,Y,Y,,,,,
-IMPRESSION BIG NORM MONO PLUS,AF,POLARISED,-,4750,-,-,Y,Y,Y,Y,N,Y,N,Y,Y,,,,,
-IMPRESSION BIG NORM MONO PLUS,AF,ROAD,3800,4320,4370,-,Y,Y,Y,Y,N,Y,N,Y,Y,,,,,
-MULTIGRESSIV BIG NORM MONO,SV,UV 400,2850,3200,3600,5100,N,Y,Y,Y,N,Y,N,N,Y,,,,,
-MULTIGRESSIV BIG NORM MONO,SV,PRO 410,-,3400,3800,-,N,Y,Y,Y,N,Y,N,N,Y,,,,,
-MULTIGRESSIV BIG NORM MONO,SV,COLORMATIC,3650,4000,4400,-,N,Y,Y,Y,N,Y,N,N,Y,,,,,
-MULTIGRESSIV BIG NORM MONO,SV,COLORMATIC SUN,-,4100,-,-,N,Y,Y,Y,N,Y,N,N,Y,,,,,
-MULTIGRESSIV BIG NORM MONO,SV,POLARISED,-,4000,-,-,N,Y,Y,Y,N,Y,N,N,Y,,,,,
-MULTIGRESSIV BIG NORM MONO,SV,ROAD,3080,3570,3620,-,N,Y,Y,Y,N,Y,N,N,Y,,,,,
-MULTIGRESSIV BIG NORM MONO PLUS,AF,UV 400,3100,3450,3850,5350,Y,Y,Y,Y,N,Y,N,N,Y,,,,,
-MULTIGRESSIV BIG NORM MONO PLUS,AF,PRO 410,-,3650,4050,-,Y,Y,Y,Y,N,Y,N,N,Y,,,,,
-MULTIGRESSIV BIG NORM MONO PLUS,AF,COLORMATIC,3900,4250,4650,-,Y,Y,Y,Y,N,Y,N,N,Y,,,,,
-MULTIGRESSIV BIG NORM MONO PLUS,AF,COLORMATIC SUN,-,4350,-,-,Y,Y,Y,Y,N,Y,N,N,Y,,,,,
-MULTIGRESSIV BIG NORM MONO PLUS,AF,POLARISED,-,4250,-,-,Y,Y,Y,Y,N,Y,N,N,Y,,,,,
-MULTIGRESSIV BIG NORM MONO PLUS,AF,ROAD,3330,3820,3870,-,Y,Y,Y,Y,N,Y,N,N,Y,,,,,
-MULTIGRESSIV MONO 2 PLUS,AF,UV 400,2100,2500,2900,-,Y,Y,Y,Y,N,N,N,N,N,,,,,
-MULTIGRESSIV MONO 2 PLUS,AF,PRO 410,-,2700,3100,-,Y,Y,Y,Y,N,N,N,N,N,,,,,
-MULTIGRESSIV MONO 2 PLUS,AF,COLORMATIC,2900,3300,3700,-,Y,Y,Y,Y,N,N,N,N,N,,,,,
-MULTIGRESSIV MONO 2,SV,UV 400,1800,2200,2600,-,Y,Y,Y,Y,N,N,N,N,N,,,,,
-MULTIGRESSIV MONO 2,SV,PRO 410,-,2400,2800,-,Y,Y,Y,Y,N,N,N,N,N,,,,,
-MULTIGRESSIV MONO 2,SV,COLORMATIC,2600,3000,3400,-,Y,Y,Y,Y,N,N,N,N,N,,,,,
-COSMOLIT FREE,SV,UV 400,1500,1900,2300,-,N,Y,N,N,N,N,N,N,N,,,,,
-COSMOLIT FREE,SV,PRO 410,-,2100,2500,-,N,Y,N,N,N,N,N,N,N,,,,,
-COSMOLIT FREE,SV,COLORMATIC,2300,2700,3100,-,N,Y,N,N,N,N,N,N,N,,,,,
+PRODUCT,furtherDesc,TYPE,MATERIAL,1.5,1.6,1.67,1.74,EYELT,3DFF,RFP,21BC,PDOI,PO,FDT,INDILT,BIGN
+MYCON 2 INDIVIDUAL,A myopia control lens which is ideal for complex prescription and wanting to see as clear as possible.,MYO,UV 400,1945,2130,2645,3750,N,Y,N,Y,N,N,N,Y,N
+MYCON 2 INDIVIDUAL,A myopia control lens which is ideal for complex prescription and wanting to see as clear as possible.,MYO,PRO 410,-,-,-,-,N,Y,N,Y,N,N,N,Y,N
+MYCON 2 INDIVIDUAL,A myopia control lens which is ideal for complex prescription and wanting to see as clear as possible.,MYO,COLORMATIC,2570,3060,3450,-,N,Y,N,Y,N,N,N,Y,N
+MYCON 2 INDIVIDUAL,A myopia control lens which is ideal for complex prescription and wanting to see as clear as possible.,MYO,COLORMATIC SUN,-,3160,-,-,N,Y,N,Y,N,N,N,Y,N
+MYCON 2 INDIVIDUAL,A myopia control lens which is ideal for complex prescription and wanting to see as clear as possible.,MYO,POLARISED,-,3060,-,-,N,Y,N,Y,N,N,N,N,N
+MYCON,A myopia control lens which is using standar optical calculation.,MYO,UV 400,1445,1630,2145,3250,N,Y,N,N,N,N,N,N,N
+MYCON,A myopia control lens which is using standar optical calculation.,MYO,PRO 410,-,1830,2345,-,N,Y,N,N,N,N,N,N,N
+MYCON,A myopia control lens which is using standar optical calculation.,MYO,COLORMATIC,2070,2560,2950,-,N,Y,N,N,N,N,N,N,N
+IMPRESSION BIG NORM,See the best possible with every Rodenstock's technology to maximize your vision. Ideal for complex prescription.,PAL,UV 400,4250,4600,5000,6500,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",Y,Y
+IMPRESSION BIG NORM,See the best possible with every Rodenstock's technology to maximize your vision. Ideal for complex prescription.,PAL,PRO 410,-,4800,5200,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",Y,Y
+IMPRESSION BIG NORM,See the best possible with every Rodenstock's technology to maximize your vision. Ideal for complex prescription.,PAL,COLORMATIC,5050,5400,5800,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",Y,Y
+IMPRESSION BIG NORM,See the best possible with every Rodenstock's technology to maximize your vision. Ideal for complex prescription.,PAL,COLORMATIC SUN,-,5500,-,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",Y,Y
+IMPRESSION BIG NORM,See the best possible with every Rodenstock's technology to maximize your vision. Ideal for complex prescription.,PAL,POLARISED,-,5400,-,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",Y,Y
+IMPRESSION BIG NORM,See the best possible with every Rodenstock's technology to maximize your vision. Ideal for complex prescription.,PAL,ROAD,4450,4800,5200,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",Y,Y
+MULTIGRESSIV BIG NORM,Almost the best lens in Rodenstock's progressive range. May be affected by spectacle frame tilt.,PAL,UV 400,3700,4050,4450,5950,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",N,Y
+MULTIGRESSIV BIG NORM,Almost the best lens in Rodenstock's progressive range. May be affected by spectacle frame tilt.,PAL,PRO 410,-,4250,4650,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",N,Y
+MULTIGRESSIV BIG NORM,Almost the best lens in Rodenstock's progressive range. May be affected by spectacle frame tilt.,PAL,COLORMATIC,4500,4850,5250,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",N,Y
+MULTIGRESSIV BIG NORM,Almost the best lens in Rodenstock's progressive range. May be affected by spectacle frame tilt.,PAL,COLORMATIC SUN,-,4950,-,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",N,Y
+MULTIGRESSIV BIG NORM,Almost the best lens in Rodenstock's progressive range. May be affected by spectacle frame tilt.,PAL,POLARISED,-,4850,-,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",N,Y
+MULTIGRESSIV BIG NORM,Almost the best lens in Rodenstock's progressive range. May be affected by spectacle frame tilt.,PAL,ROAD,3900,4250,4650,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",N,Y
+IMPRESSION 2,The best Rodenstock's progressive design before the BIG NORM era.,PAL,UV 400,3400,3800,4200,-,Y,Y,Y,Y,Y,Y,Balance,Y,N
+IMPRESSION 2,The best Rodenstock's progressive design before the BIG NORM era.,PAL,PRO 410,-,4000,4400,-,Y,Y,Y,Y,Y,Y,Balance,Y,N
+IMPRESSION 2,The best Rodenstock's progressive design before the BIG NORM era.,PAL,COLORMATIC,4200,4600,5000,-,Y,Y,Y,Y,Y,Y,Balance,Y,N
+MULTIGRESSIV MYLIFE 2,Almost an equal to Impression 2 except that it may be affected by spectacle frame tilt.,PAL,UV 400,3100,3500,3900,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",N,N
+MULTIGRESSIV MYLIFE 2,Almost an equal to Impression 2 except that it may be affected by spectacle frame tilt.,PAL,PRO 410,-,3700,4100,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",N,N
+MULTIGRESSIV MYLIFE 2,Almost an equal to Impression 2 except that it may be affected by spectacle frame tilt.,PAL,COLORMATIC,3900,4300,4700,-,Y,Y,Y,Y,Y,Y,"Balance, Near, Far",N,N
+MULTIGRESSIV MYVIEW 2,A standard design that is customized to your preferred near vision length.,PAL,UV 400,2800,3200,3600,-,Y,Y,Y,Y,Y,N,Balance,N,N
+MULTIGRESSIV MYVIEW 2,A standard design that is customized to your preferred near vision length.,PAL,PRO 410,-,3400,3800,-,Y,Y,Y,Y,Y,N,Balance,N,N
+MULTIGRESSIV MYVIEW 2,A standard design that is customized to your preferred near vision length.,PAL,COLORMATIC,3600,4000,4400,-,Y,Y,Y,Y,Y,N,Balance,N,N
+PURELIFE FREE 2,A standard design that functions reliably for day to day use.,PAL,UV 400,2100,2500,2900,-,Y,Y,Y,Y,N,N,Balance,N,N
+PURELIFE FREE 2,A standard design that functions reliably for day to day use.,PAL,PRO 410,-,2700,3100,-,Y,Y,Y,Y,N,N,Balance,N,N
+PURELIFE FREE 2,A standard design that functions reliably for day to day use.,PAL,COLORMATIC,2900,3300,3700,-,Y,Y,Y,Y,N,N,Balance,N,N
+LIFE FREE 2,An entry level to experience Rodenstock's premium progressive vision.,PAL,UV 400,1700,2100,2500,-,Y,Y,Y,N,N,N,Balance,N,N
+LIFE FREE 2,An entry level to experience Rodenstock's premium progressive vision.,PAL,PRO 410,-,2300,2700,-,Y,Y,Y,N,N,N,Balance,N,N
+LIFE FREE 2,An entry level to experience Rodenstock's premium progressive vision.,PAL,COLORMATIC,2500,2900,3300,-,Y,Y,Y,N,N,N,Balance,N,N
+IMPRESSION BIG NORM ERGO,See the best possible with every Rodenstock's technology to maximize your vision. Ideal for complex prescription.,NPAL,UV 400,3650,4000,4400,5900,Y,Y,Y,Y,Y,Y,N,Y,Y
+IMPRESSION BIG NORM ERGO,See the best possible with every Rodenstock's technology to maximize your vision. Ideal for complex prescription.,NPAL,PRO 410,-,4200,4600,-,Y,Y,Y,Y,Y,Y,N,Y,Y
+MULTIGRESSIV BIG NORM ERGO,Almost the best lens in Rodenstock's near progressive range. May be affected by spectacle frame tilt.,NPAL,UV 400,3050,3400,3800,5300,Y,Y,Y,Y,Y,Y,N,N,Y
+MULTIGRESSIV BIG NORM ERGO,Almost the best lens in Rodenstock's near progressive range. May be affected by spectacle frame tilt.,NPAL,PRO 410,-,3600,4000,-,Y,Y,Y,Y,Y,Y,N,N,Y
+MULTIGRESSIV ERGO 2,A standard design that is customized to your preferred intermediate  vision length.,NPAL,UV 400,2300,2700,3100,-,Y,Y,Y,Y,Y,N,N,N,N
+MULTIGRESSIV ERGO 2,A standard design that is customized to your preferred intermediate  vision length.,NPAL,PRO 410,-,2900,3300,-,Y,Y,Y,Y,Y,N,N,N,N
+PROGRESSIV ERGO 2,An entry level to experience Rodenstock's premium near progressive vision.,NPAL,UV 400,1700,2100,2500,-,Y,Y,Y,N,N,N,N,N,N
+PROGRESSIV ERGO 2,An entry level to experience Rodenstock's premium near progressive vision.,NPAL,PRO 410,-,2300,2700,-,Y,Y,Y,N,N,N,N,N,N
+IMPRESSION BIG NORM MONO,See the best possible with every Rodenstock's technology to maximize your vision. Ideal for complex prescription.,SV,UV 400,3350,3700,4100,5600,N,Y,Y,Y,N,Y,N,Y,Y
+IMPRESSION BIG NORM MONO,See the best possible with every Rodenstock's technology to maximize your vision. Ideal for complex prescription.,SV,PRO 410,-,3900,4300,-,N,Y,Y,Y,N,Y,N,Y,Y
+IMPRESSION BIG NORM MONO,See the best possible with every Rodenstock's technology to maximize your vision. Ideal for complex prescription.,SV,COLORMATIC,4150,4500,4900,-,N,Y,Y,Y,N,Y,N,Y,Y
+IMPRESSION BIG NORM MONO,See the best possible with every Rodenstock's technology to maximize your vision. Ideal for complex prescription.,SV,COLORMATIC SUN,-,4600,-,-,N,Y,Y,Y,N,Y,N,Y,Y
+IMPRESSION BIG NORM MONO,See the best possible with every Rodenstock's technology to maximize your vision. Ideal for complex prescription.,SV,POLARISED,-,4500,-,-,N,Y,Y,Y,N,Y,N,Y,Y
+IMPRESSION BIG NORM MONO,See the best possible with every Rodenstock's technology to maximize your vision. Ideal for complex prescription.,SV,ROAD,3550,4070,4120,-,N,Y,Y,Y,N,Y,N,Y,Y
+IMPRESSION BIG NORM MONO PLUS,See the best possible with every Rodenstock's technology to maximize your vision. Ideal for complex prescription.,AF,UV 400,3600,3950,4350,5850,Y,Y,Y,Y,N,Y,N,Y,Y
+IMPRESSION BIG NORM MONO PLUS,See the best possible with every Rodenstock's technology to maximize your vision. Ideal for complex prescription.,AF,PRO 410,-,4150,4550,-,Y,Y,Y,Y,N,Y,N,Y,Y
+IMPRESSION BIG NORM MONO PLUS,See the best possible with every Rodenstock's technology to maximize your vision. Ideal for complex prescription.,AF,COLORMATIC,4400,4750,5150,-,Y,Y,Y,Y,N,Y,N,Y,Y
+IMPRESSION BIG NORM MONO PLUS,See the best possible with every Rodenstock's technology to maximize your vision. Ideal for complex prescription.,AF,COLORMATIC SUN,-,4850,-,-,Y,Y,Y,Y,N,Y,N,Y,Y
+IMPRESSION BIG NORM MONO PLUS,See the best possible with every Rodenstock's technology to maximize your vision. Ideal for complex prescription.,AF,POLARISED,-,4750,-,-,Y,Y,Y,Y,N,Y,N,Y,Y
+IMPRESSION BIG NORM MONO PLUS,See the best possible with every Rodenstock's technology to maximize your vision. Ideal for complex prescription.,AF,ROAD,3800,4320,4370,-,Y,Y,Y,Y,N,Y,N,Y,Y
+MULTIGRESSIV BIG NORM MONO,Almost the best lens in Rodenstock's single vision range. May be affected by spectacle frame tilt.,SV,UV 400,2850,3200,3600,5100,N,Y,Y,Y,N,Y,N,N,Y
+MULTIGRESSIV BIG NORM MONO,Almost the best lens in Rodenstock's single vision range. May be affected by spectacle frame tilt.,SV,PRO 410,-,3400,3800,-,N,Y,Y,Y,N,Y,N,N,Y
+MULTIGRESSIV BIG NORM MONO,Almost the best lens in Rodenstock's single vision range. May be affected by spectacle frame tilt.,SV,COLORMATIC,3650,4000,4400,-,N,Y,Y,Y,N,Y,N,N,Y
+MULTIGRESSIV BIG NORM MONO,Almost the best lens in Rodenstock's single vision range. May be affected by spectacle frame tilt.,SV,COLORMATIC SUN,-,4100,-,-,N,Y,Y,Y,N,Y,N,N,Y
+MULTIGRESSIV BIG NORM MONO,Almost the best lens in Rodenstock's single vision range. May be affected by spectacle frame tilt.,SV,POLARISED,-,4000,-,-,N,Y,Y,Y,N,Y,N,N,Y
+MULTIGRESSIV BIG NORM MONO,Almost the best lens in Rodenstock's single vision range. May be affected by spectacle frame tilt.,SV,ROAD,3080,3570,3620,-,N,Y,Y,Y,N,Y,N,N,Y
+MULTIGRESSIV BIG NORM MONO PLUS,Almost the best lens in Rodenstock's anti-fatigue vision range. May be affected by spectacle frame tilt.,AF,UV 400,3100,3450,3850,5350,Y,Y,Y,Y,N,Y,N,N,Y
+MULTIGRESSIV BIG NORM MONO PLUS,Almost the best lens in Rodenstock's anti-fatigue vision range. May be affected by spectacle frame tilt.,AF,PRO 410,-,3650,4050,-,Y,Y,Y,Y,N,Y,N,N,Y
+MULTIGRESSIV BIG NORM MONO PLUS,Almost the best lens in Rodenstock's anti-fatigue vision range. May be affected by spectacle frame tilt.,AF,COLORMATIC,3900,4250,4650,-,Y,Y,Y,Y,N,Y,N,N,Y
+MULTIGRESSIV BIG NORM MONO PLUS,Almost the best lens in Rodenstock's anti-fatigue vision range. May be affected by spectacle frame tilt.,AF,COLORMATIC SUN,-,4350,-,-,Y,Y,Y,Y,N,Y,N,N,Y
+MULTIGRESSIV BIG NORM MONO PLUS,Almost the best lens in Rodenstock's anti-fatigue vision range. May be affected by spectacle frame tilt.,AF,POLARISED,-,4250,-,-,Y,Y,Y,Y,N,Y,N,N,Y
+MULTIGRESSIV BIG NORM MONO PLUS,Almost the best lens in Rodenstock's anti-fatigue vision range. May be affected by spectacle frame tilt.,AF,ROAD,3330,3820,3870,-,Y,Y,Y,Y,N,Y,N,N,Y
+MULTIGRESSIV MONO 2 PLUS,A lens which offers swim reduction technology for easy adaptation into progressives.,AF,UV 400,2100,2500,2900,-,Y,Y,Y,Y,N,N,N,N,N
+MULTIGRESSIV MONO 2 PLUS,A lens which offers swim reduction technology for easy adaptation into progressives.,AF,PRO 410,-,2700,3100,-,Y,Y,Y,Y,N,N,N,N,N
+MULTIGRESSIV MONO 2 PLUS,A lens which offers swim reduction technology for easy adaptation into progressives.,AF,COLORMATIC,2900,3300,3700,-,Y,Y,Y,Y,N,N,N,N,N
+MULTIGRESSIV MONO 2,An improvement towards stable  vision even at the peripheral view.,SV,UV 400,1800,2200,2600,-,Y,Y,Y,Y,N,N,N,N,N
+MULTIGRESSIV MONO 2,An improvement towards stable  vision even at the peripheral view.,SV,PRO 410,-,2400,2800,-,Y,Y,Y,Y,N,N,N,N,N
+MULTIGRESSIV MONO 2,An improvement towards stable  vision even at the peripheral view.,SV,COLORMATIC,2600,3000,3400,-,Y,Y,Y,Y,N,N,N,N,N
+COSMOLIT FREE,An entry level to experience Rodenstock's premium single vision.,SV,UV 400,1500,1900,2300,-,N,Y,N,N,N,N,N,N,N
+COSMOLIT FREE,An entry level to experience Rodenstock's premium single vision.,SV,PRO 410,-,2100,2500,-,N,Y,N,N,N,N,N,N,N
+COSMOLIT FREE,An entry level to experience Rodenstock's premium single vision.,SV,COLORMATIC,2300,2700,3100,-,N,Y,N,N,N,N,N,N,N
