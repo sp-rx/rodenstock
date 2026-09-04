@@ -271,13 +271,13 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
 
 .attribute-description{
   margin-top:12px;
-  padding:14px 16px;
+  padding:3%;
 
   background:var(--paper);
   border:1px solid var(--line);
   border-radius:12px;
 
-  min-height:82px;
+  min-height:5%;
 
   transition:opacity .15s ease;
 }
@@ -286,7 +286,7 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
   color:var(--muted);
   font-size:11px;
   text-align:center;
-  padding:12px 0;
+  padding:5px 0;
 }
 
 
@@ -483,7 +483,7 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
   background:transparent;
   color:var(--muted);
   border:1px solid var(--line);
-  opacity:.35;
+  opacity:.95;
 }
 
 .badge.fdt{
@@ -494,12 +494,12 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
   background:transparent;
   color:var(--muted);
   border:1px solid var(--line);
-  opacity:.35;
+  opacity:.95;
 }
 
 .loading,.empty{
   text-align:center;
-  padding:60px 20px;
+  padding:20px 20px;
   color:var(--muted);
   background:var(--paper);
   border:1px dashed var(--line);
@@ -592,10 +592,26 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
     </div>
 
 
+</div>
+ 
+    <div style="display:none" id="note"></div>
+
+  <div class="results-col">
+    <div class="status">
+      <span id="resultInfo"></span>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="results" id="results">
+      <div class="loading">Loading catalogue…</div>
+    </div>
+  </div>
 
 
 
-<div class="attribute-guide">
+
+
+
+<div style="margin-top:3%" class="attribute-guide">
 
   <div class="attribute-guide-title">
     <span>Click an attribute to learn more</span>
@@ -606,54 +622,50 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
 <div class="attribute-buttons">
 
   <div class="attribute-category">
-    <div class="attribute-category-title">
-      Overall Clarity
-    </div>
+
 
     <div class="attribute-category-buttons">
       <button class="attribute-btn" onclick="showAttribute('3DFF')">
-        3D
+        3D Free Form - Optimize for Every Prescription
       </button>
 
       <button class="attribute-btn" onclick="showAttribute('21BC')">
-        21BC
+        21 Base Curve - Optimize for Swim Effect
       </button>
 
       <button class="attribute-btn" onclick="showAttribute('INDILT')">
-        INDILT
+        Individual Lens Technology - Optimize for Spectacle Frame
       </button>
 
       <button class="attribute-btn" onclick="showAttribute('PO')">
-        PO
+        Pupil Optimization - Optimize for Low Light
       </button>
 
       <button class="attribute-btn" onclick="showAttribute('BIGN')">
-        BIGN
+        BIG NORM - Optimize for Eye Size and Rotation
       </button>
     </div>
   </div>
 
 
   <div class="attribute-category">
-    <div class="attribute-category-title">
-      Near Vision / PAL
-    </div>
+
 
     <div class="attribute-category-buttons">
       <button class="attribute-btn" onclick="showAttribute('EYELT')">
-        EyeLT
+        Eye Lens Technology - Optimize Near Vision Clarity
       </button>
 
       <button class="attribute-btn" onclick="showAttribute('RFP')">
-        RFP
+        Retina Focus Principle - Optimize Near Vision Zone Size
       </button>
 
       <button class="attribute-btn" onclick="showAttribute('PDOI')">
-        PDOI
+        PD Optimised Inset - Customized for Your Near Vision Length
       </button>
 
       <button class="attribute-btn" onclick="showAttribute('FDT')">
-        FDT
+        Flexible Design Technology - Customized your Lenses to be Dominant Far or Near
       </button>
     </div>
   </div>
@@ -674,20 +686,16 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
 
 
 
-  </div>
-    <div style="display:none" id="note"></div>
-
-  <div class="results-col">
-    <div class="status">
-      <span id="resultInfo"></span>
-      <span class="count" id="count"></span>
-    </div>
-    <div class="results" id="results">
-      <div class="loading">Loading catalogue…</div>
-    </div>
-  </div>
-
 </div>
+
+
+
+
+
+
+
+
+
 
 <script>
 
@@ -722,13 +730,13 @@ const attributeInfo={
   PDOI:{
     name:"PD Optimized Inset",
     function:"Customized Near Zone Positioning for Different Wearers.",
-    benefit:"Offers the Widest Near Zone at Your Preferred Position."
+    benefit:"Redesign the Near Zone to Fit Your Preferred Position."
   },
 
   FDT:{
     name:"Flexible Design Technology",
     function:"Lenses Re-Designed to have Wider Far or Near Vision.",
-    benefit:"Customized Your Vision According to Your Needs."
+    benefit:"Make Your Lenses See More Far or More Near."
   },
 
   INDILT:{
@@ -1142,7 +1150,7 @@ const clarity=[
 
       return `
         <span class="badge ${key==="FDT"?"fdt ":""}${active?"":"muted"}">
-          ${key==="FDT" && active ? `FDT ${lens.FDT}` : label}
+          ${key==="FDT" && active ? `${lens.FDT}` : label}
         </span>
       `;
     }).join("");
