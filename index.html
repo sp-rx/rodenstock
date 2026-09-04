@@ -752,41 +752,55 @@ const attributeInfo={
 };
 
 
+let activeAttribute = "";
+
 function showAttribute(key){
 
-const attributeImages = [
-  "3DFF",
-  "21BC",
-  "INDILT",
-  "PO",
-  "BIGN",
-  "EYELT",
-  "RFP",
-  "PDOI",
-  "FDT"
-];
+  const attributeImages = [
+    "3DFF",
+    "21BC",
+    "INDILT",
+    "PO",
+    "BIGN",
+    "EYELT",
+    "RFP",
+    "PDOI",
+    "FDT"
+  ];
 
-attributeImages.forEach(key => {
-  const img = new Image();
-  img.src = `https://sp-rx.github.io/rodenstock/${key}.jpg`;
-});
+  /* Preload images */
+  attributeImages.forEach(key => {
+    const img = new Image();
+    img.src = `https://sp-rx.github.io/rodenstock/${key}.jpg`;
+  });
 
-  const info = attributeInfo[key];
+  /* CLICK SAME BUTTON AGAIN = OFF */
+  if(activeAttribute === key){
+    activeAttribute = "";
 
-  if(!info) return;
+    document
+      .querySelectorAll(".attribute-btn")
+      .forEach(btn => btn.classList.remove("active"));
+
+    document.getElementById("attributeDescription").innerHTML = `
+      <div class="attribute-placeholder">
+        Select an attribute above
+      </div>
+    `;
+
+    return;
+  }
+
+  /* New attribute selected */
+  activeAttribute = key;
 
   /* Remove active state from all buttons */
-
   document
     .querySelectorAll(".attribute-btn")
     .forEach(btn => btn.classList.remove("active"));
 
-
   /* Activate clicked button */
-
-  const buttons = document.querySelectorAll(".attribute-btn");
-
-  buttons.forEach(btn => {
+  document.querySelectorAll(".attribute-btn").forEach(btn => {
 
     const label = btn.textContent.trim();
 
@@ -801,9 +815,11 @@ attributeImages.forEach(key => {
 
   });
 
+  const info = attributeInfo[key];
+
+  if(!info) return;
 
   /* Build description */
-
   document.getElementById("attributeDescription").innerHTML = `
 
     <div class="attribute-name">
@@ -817,7 +833,6 @@ attributeImages.forEach(key => {
       </span>
 
     </div>
-
 
     <div class="attribute-details">
 
@@ -833,7 +848,6 @@ attributeImages.forEach(key => {
 
       </div>
 
-
       <div class="attribute-detail">
 
         <span class="attribute-detail-label">
@@ -848,8 +862,12 @@ attributeImages.forEach(key => {
 
     </div>
 
-
-<img style="margin-top:5%; margin-bottom:3%; width:100%" src="https://sp-rx.github.io/rodenstock/${key}.jpg" alt="${key}" class="attribute-image" >
+    <img
+      style="margin-top:5%; margin-bottom:3%; width:100%"
+      src="https://sp-rx.github.io/rodenstock/${key}.jpg"
+      alt="${key}"
+      class="attribute-image"
+    >
 
   `;
 }
@@ -936,34 +954,36 @@ return `<button class="btn ${active?"active":""} ${active&&tealVariant?"teal":""
 }
 
 
-/* VISION TYPE - EXCLUSIVE */
+/* VISION TYPE - TOGGLE */
 
 function renderVision(){
   document.getElementById("visionButtons").innerHTML =
     visionTypes.map(type => {
       const active = selectedType === type;
+
       return button(
         visionLabels[type] || type,
         active,
-        `selectedType="${type}";render()`
+        `selectedType="${active ? "" : type}";render()`
       );
     }).join("");
 }
 
 
-/* MATERIAL - EXCLUSIVE */
+/* MATERIAL - TOGGLE */
 
 function renderMaterial(){
-document.getElementById("materialButtons").innerHTML=
-materials.map(material=>{
-const active=selectedMaterial===material;
-return button(
-material,
-active,
-`selectedMaterial="${material}";render()`,
-true
-);
-}).join("");
+  document.getElementById("materialButtons").innerHTML =
+    materials.map(material => {
+      const active = selectedMaterial === material;
+
+      return button(
+        material,
+        active,
+        `selectedMaterial="${active ? "" : material}";render()`,
+        true
+      );
+    }).join("");
 }
 
 
