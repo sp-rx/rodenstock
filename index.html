@@ -35,6 +35,35 @@ body {
   transform-origin: top left;
   width: 125%;
 }
+
+#backgroundSlideshow {
+  position: fixed;
+  top: 20%;
+  left: 1%;
+  width: 98%;
+  height: auto;
+  z-index: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+
+  opacity: 0;
+  transition: opacity 3s ease-in-out;
+}
+
+.bg-image.active {
+  opacity: 1;
+}
+
+
 h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
 
 /* ---------- HERO ---------- */
@@ -97,13 +126,13 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
 }
 
 /* ---------- FILTER PANEL ---------- */
-.panel{
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:20px 22px;
-  box-shadow:0 18px 40px -20px rgba(15,27,60,.25);
-  margin-bottom:24px;
+.panel {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px 22px;
+  box-shadow: 0 18px 40px -20px rgba(15,27,60,.25);
+  margin-bottom: 24px;
 }
 
 .panel .filter{
@@ -352,11 +381,11 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
 
 
 
-
-
-
 /* ---------- RESULTS ---------- */
-.results-col{min-width:0}
+.results-col{
+  min-width:0;
+}
+
 .status{
   display:flex;
   justify-content:space-between;
@@ -365,13 +394,22 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
   color:var(--muted);
   font-size:14px;
 }
-.count{font-weight:700;color:var(--ink);font-family:'Space Grotesk',Arial,sans-serif}
+
+.count{
+  font-weight:700;
+  color:var(--ink);
+  font-family:'Space Grotesk',Arial,sans-serif;
+}
 
 .results{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:16px;
+  align-items:start;
 }
+
+
+/* ---------- CARD ---------- */
 
 .card{
   background:var(--paper);
@@ -380,16 +418,80 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
   padding:20px;
   position:relative;
   overflow:hidden;
-  transition:border-color .15s ease, transform .15s ease;
+  transition:
+    border-color .15s ease,
+    transform .15s ease,
+    padding .15s ease;
 }
+
 .card::before{
   content:"";
   position:absolute;
-  left:0;top:0;bottom:0;
+  left:0;
+  top:0;
+  bottom:0;
   width:4px;
   background:linear-gradient(180deg,var(--teal),var(--blue));
 }
-.card:hover{border-color:var(--blue)}
+
+.card:hover{
+  border-color:var(--blue);
+}
+
+
+/* ---------- CARD HEADER ---------- */
+
+.card-header{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.card h2{
+  font-size:18px;
+  font-weight:600;
+  margin:0 0 4px;
+  color:var(--navy);
+  line-height:1.25;
+}
+
+.card-toggle{
+  flex-shrink:0;
+  cursor:pointer;
+}
+
+
+/* ---------- CARD CONTENT ---------- */
+
+.card-content{
+  display:block;
+}
+
+
+/* ---------- MINIMIZED ---------- */
+
+.card.minimized{
+  height:auto !important;
+  min-height:0 !important;
+  padding:12px 20px !important;
+  align-self:start;
+}
+
+.card.minimized .card-content{
+  display:none !important;
+}
+
+.card.minimized .card-header{
+  margin-bottom:0;
+}
+
+.card.minimized h2{
+  margin:0;
+}
+
+
+/* ---------- OTHER CARD ELEMENTS ---------- */
 
 .type-tag{
   display:inline-block;
@@ -402,16 +504,19 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
   padding:3px 8px;
   margin-bottom:10px;
 }
-.card h2{
-  font-size:18px;
-  font-weight:600;
-  margin:0 0 4px;
-  color:var(--navy);
-  line-height:1.25;
-}
-.meta{font-size:12.5px;color:var(--muted);margin-bottom:14px}
 
-.prices{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+.meta{
+  font-size:12.5px;
+  color:var(--muted);
+  margin-bottom:14px;
+}
+
+.prices{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:7px;
+}
+
 .price{
   border:1px solid var(--line);
   border-radius:10px;
@@ -419,6 +524,7 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
   text-align:center;
   background:var(--cloud);
 }
+
 .price b{
   display:block;
   font-size:10px;
@@ -427,8 +533,16 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
   font-weight:700;
   letter-spacing:.02em;
 }
-.price span{font-weight:700;font-size:13.5px;color:var(--ink)}
-.na{color:#B7BEC8}
+
+.price span{
+  font-weight:700;
+  font-size:13.5px;
+  color:var(--ink);
+}
+
+.na{
+  color:#B7BEC8;
+}
 
 .tech{
   display:flex;
@@ -468,17 +582,13 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
   height:26px;
   padding:0 9px;
   border-radius:14px;
-
   background:var(--navy);
   color:#fff;
-
   font-size:10.5px;
   font-weight:700;
   letter-spacing:.02em;
-
   transition:opacity .15s ease, background .15s ease;
 }
-
 .badge.muted{
   background:transparent;
   color:var(--muted);
@@ -558,6 +668,44 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
 
 <body>
 
+<div id="backgroundSlideshow">
+  <img class="bg-image active" src="https://sp-rx.github.io/rodenstock/bg1.jpg">
+  <img class="bg-image" src="https://sp-rx.github.io/rodenstock/bg2.jpg">
+  <img class="bg-image" src="https://sp-rx.github.io/rodenstock/bg3.jpg">
+  <img class="bg-image" src="https://sp-rx.github.io/rodenstock/bg4.jpg">
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const bgImages = document.querySelectorAll("#backgroundSlideshow .bg-image");
+
+  if (!bgImages.length) return;
+
+  let bgIndex = 0;
+
+  function nextBackground() {
+    bgImages[bgIndex].classList.remove("active");
+
+    bgIndex = (bgIndex + 1) % bgImages.length;
+
+    bgImages[bgIndex].classList.add("active");
+  }
+
+  // First change after 3 seconds
+  setTimeout(function () {
+
+    nextBackground();
+
+    // Continue every 6 seconds
+    setInterval(nextBackground, 6000);
+
+  }, 3000);
+
+});
+</script>
+
+
 <div class="hero">
   <div class="hero-inner">
     <div class="eyebrow-line"><span class="dot"></span>Lens Finder</div>
@@ -567,7 +715,7 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
 </div>
 
 <div class="wrap">
-
+<div style="margin-top:5%"></div>
   <div class="panel">
 
     <div class="filter">
@@ -581,10 +729,10 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
       <div class="buttons" id="materialButtons"></div>
     </div>
 
-    <div id="conditionalFilters"></div>
+    <div style="display:none" id="conditionalFilters"></div>
 
 
-    <div class="filter">
+    <div style="display:none" class="filter">
       <h3>Search</h3>
       <div class="search-box">
         <input class="search" id="search" placeholder="Search product or material…">
@@ -622,50 +770,66 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
 <div class="attribute-buttons">
 
   <div class="attribute-category">
-
+    <div class="attribute-category-title">
+      Clarity
+    </div>
 
     <div class="attribute-category-buttons">
-      <button class="attribute-btn" onclick="showAttribute('3DFF')">
-        3D Free Form - Optimize for Every Prescription
-      </button>
-
-      <button class="attribute-btn" onclick="showAttribute('21BC')">
-        21 Base Curve - Optimize for Swim Effect
-      </button>
 
       <button class="attribute-btn" onclick="showAttribute('INDILT')">
-        Individual Lens Technology - Optimize for Spectacle Frame
+        INDILT
       </button>
 
       <button class="attribute-btn" onclick="showAttribute('PO')">
-        Pupil Optimization - Optimize for Low Light
+        PO
       </button>
 
       <button class="attribute-btn" onclick="showAttribute('BIGN')">
-        BIG NORM - Optimize for Eye Size and Rotation
+        BIGN
       </button>
     </div>
   </div>
 
 
-  <div class="attribute-category">
 
+  <div class="attribute-category">
+    <div class="attribute-category-title">
+    Swim
+    </div>
+
+    <div class="attribute-category-buttons">
+      <button class="attribute-btn" onclick="showAttribute('3DFF')">
+        3D
+      </button>
+
+      <button class="attribute-btn" onclick="showAttribute('21BC')">
+        21BC
+      </button>
+    </div>
+  </div>
+
+
+
+  <div class="attribute-category">
+    <div class="attribute-category-title">
+      Progressive 
+    </div>
 
     <div class="attribute-category-buttons">
       <button class="attribute-btn" onclick="showAttribute('EYELT')">
-        Eye Lens Technology - Optimize Near Vision Clarity
+        EyeLT
       </button>
 
       <button class="attribute-btn" onclick="showAttribute('RFP')">
-        Retina Focus Principle - Optimize Near Vision Zone Size
+        RFP
       </button>
 
       <button class="attribute-btn" onclick="showAttribute('PDOI')">
-        PD Optimised Inset - Customized for Your Near Vision Length
+        PDOI
       </button>
 
       <button class="attribute-btn" onclick="showAttribute('FDT')">
-        Flexible Design Technology - Customized your Lenses to be Dominant Far or Near
+        FDT
       </button>
     </div>
   </div>
@@ -687,15 +851,6 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
 
 
 </div>
-
-
-
-
-
-
-
-
-
 
 <script>
 
@@ -918,6 +1073,11 @@ nearVision:new Set(),
 palDesign:new Set()
 };
 
+const minimizedCards = new Set();
+
+
+
+
 
 /* CSV */
 
@@ -946,12 +1106,11 @@ return rows
 /* TECHNOLOGY */
 
 function hasTech(lens,key){
-return String(lens[key]||"").trim().toUpperCase()==="Y";
+  return String(lens[key] || "").trim().toUpperCase() === "Y";
 }
 
-function hasFDT(lens){
-const value=String(lens.FDT||"").trim().toUpperCase();
-return value!=="N"&&value!=="-"&&value!=="";
+function getFDT(lens){
+  return String(lens.FDT || "").trim();
 }
 
 
@@ -1083,9 +1242,6 @@ for(const key of selected.nearVision){
 if(!hasTech(lens,key))return false;
 }
 
-if(selected.palDesign.has("FDT")&&!hasFDT(lens)){
-return false;
-}
 
 return true;
 }
@@ -1095,32 +1251,16 @@ return true;
 
 function techTags(lens){
 
-  /*
-   * Which attribute groups are relevant to each vision type.
-   *
-   * SV:
-   *   Clarity + 3D
-   *
-   * PAL:
-   *   Clarity + Near Vision + PAL Design + 3D
-   *
-   * AF:
-   *   Clarity + Near Vision + 3D
-   *
-   * NPAL:
-   *   Clarity + Near Vision + 3D
-   *
-   * MYO:
-   *   Clarity + 3D
-   */
+  const clarity=[
+    ["BIGN","BIGN"],
+    ["INDILT","INDILT"],
+    ["PO","PO"],
+  ];
 
-const clarity=[
-  ["BIGN","BIGN"],
-  ["21BC","21BC"],
-  ["INDILT","INDILT"],
-  ["PO","PO"],
-  ["3DFF","3D"]
-];
+  const swim=[
+    ["21BC","21BC"],
+    ["3DFF","3D"]
+  ];
 
   const nearVision=[
     ["EYELT","EyeLT"],
@@ -1132,27 +1272,31 @@ const clarity=[
     ["FDT","FDT"]
   ];
 
-
-
-  /* Build one attribute group */
-
   function group(title,items){
 
     const badges=items.map(([key,label])=>{
 
-      let active=false;
-
+      /* FDT: directly fetch the CSV cell */
       if(key==="FDT"){
-        active=hasFDT(lens);
-      }else{
-        active=hasTech(lens,key);
+
+        const fdt = getFDT(lens);
+
+        return `
+          <span class="badge fdt ${fdt ? "" : "muted"}">
+            ${fdt || label}
+          </span>
+        `;
       }
 
+      /* Other technologies still use Y/N */
+      const active=hasTech(lens,key);
+
       return `
-        <span class="badge ${key==="FDT"?"fdt ":""}${active?"":"muted"}">
-          ${key==="FDT" && active ? `${lens.FDT}` : label}
+        <span class="badge ${active ? "" : "muted"}">
+          ${label}
         </span>
       `;
+
     }).join("");
 
     return `
@@ -1165,27 +1309,24 @@ const clarity=[
     `;
   }
 
-
   let html="";
 
+  /* CLARITY */
+  html+=group("Clarity Enhancement",clarity);
 
-  /* CLARITY — relevant to all vision types */
+  /* SWIM */
+  html+=group("Swim Effect Reduction",swim);
 
-  html+=group("Clarity",clarity);
-
-
-  /* NEAR VISION — PAL / AF / NPAL only */
-
+  /* NEAR VISION */
   if(["PAL","AF","NPAL"].includes(lens.TYPE)){
-    html+=group("Near Vision",nearVision);
+    html+=group("Near Vision Improvement",nearVision);
   }
 
-
-  /* PAL DESIGN — PAL only */
-
+  /* PAL DESIGN */
   if(lens.TYPE==="PAL"){
     html+=group("PAL Design",palDesign);
   }
+
   return html;
 }
 
@@ -1213,38 +1354,65 @@ function materialLabel(material){
 return material==="PRO 410"?"PRO410":material;
 }
 
+function getFurtherDesc(lens){
+  return String(lens.furtherDesc || "").trim();
+}
 
 function card(lens){
+  const furtherDesc = getFurtherDesc(lens);
 
-const indexes=[
-["1.5",lens["1.5"]],
-["1.6",lens["1.6"]],
-["1.67",lens["1.67"]],
-["1.74",lens["1.74"]]
-];
 
-return `
-<article class="card">
+  const cardKey = `${lens.TYPE}-${lens.PRODUCT}-${lens.MATERIAL}`;
+  const isMinimized = minimizedCards.has(cardKey);
 
-<h2>${visionLabel(lens.TYPE)} ${lens.PRODUCT}<br> ${materialLabel(lens.MATERIAL)}</h2>
+  const indexes=[
+    ["1.5",lens["1.5"]],
+    ["1.6",lens["1.6"]],
+    ["1.67",lens["1.67"]],
+    ["1.74",lens["1.74"]]
+  ];
 
-<div style="margin-top:2%" class="prices">
+  return `
+<article class="card ${isMinimized ? "minimized" : ""}" data-key="${cardKey}">
 
-${indexes.map(([index,value])=>`
-<div class="price">
-<b>${index} INDEX</b>
-${formatPrice(value)}
-</div>
-`).join("")}
+    <div class="card-header">
 
-</div>
+      <h2>
+        ${lens.PRODUCT}<br>
+${visionLabel(lens.TYPE)}
+        ${materialLabel(lens.MATERIAL)}<br>
+<span style="font-size:15px"><i>${furtherDesc}</i></span>
+      </h2>
 
-<div class="tech">
-${techTags(lens)}
-</div>
 
-</article>
-`;
+
+<button style="width:20%" class="card-toggle attribute-btn" onclick="toggleCard(this.closest('.card'))">
+  ${isMinimized ? "O" : "_"}
+</button>
+
+    </div>
+
+    <div class="card-content">
+
+      <div style="margin-top:2%" class="prices">
+
+        ${indexes.map(([index,value])=>`
+          <div class="price">
+            <b>${index} INDEX</b>
+            ${formatPrice(value)}
+          </div>
+        `).join("")}
+
+      </div>
+
+      <div class="tech">
+        ${techTags(lens)}
+      </div>
+
+    </div>
+
+  </article>
+  `;
 }
 
 
@@ -1324,6 +1492,40 @@ render();
 document.getElementById("results").innerHTML=
 `<div class="error">${error.message}. Check that the CSV is publicly accessible on GitHub.</div>`;
 });
+
+
+
+function toggleCard(card){
+
+  const key = card.dataset.key;
+
+  card.classList.toggle("minimized");
+
+  const button = card.querySelector(".card-toggle");
+
+  if(card.classList.contains("minimized")){
+    minimizedCards.add(key);
+    button.textContent = "O";
+  }else{
+    minimizedCards.delete(key);
+    button.textContent = "_";
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </script>
 
