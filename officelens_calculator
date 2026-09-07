@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cross Product Finder</title>
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:25px;font-family:Arial;background:#f3eee3;color:#222}
+.box{max-width:900px;margin:auto}
+.inputs,.result{background:#fff;padding:18px;border-radius:10px;margin-bottom:12px}
+.row{display:flex;gap:10px;align-items:end;flex-wrap:wrap}
+label{display:block;font-size:12px;margin-bottom:4px}
+input{width:100px;padding:9px;font-size:16px}
+button{padding:10px 20px;border:0;border-radius:6px;background:#333;color:#fff;cursor:pointer}
+.sort{display:flex;gap:8px;margin-bottom:12px}
+.result{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.info{flex:1}
+.product{font-size:20px;font-weight:bold;margin-bottom:10px}
+.rx{margin:5px 0}
+.small{font-size:13px;color:#666}
+.far{min-width:190px;padding-right:20%}
+.far-title{display:inline;font-size:inherit;font-weight:bold;margin:0}
+.far-rx{display:inline;font-size:inherit;font-weight:normal}
+.instructions{
+    background:#fff;
+    padding:14px 18px;
+    border-radius:10px;
+    margin-bottom:12px;
+    line-height:1.6;
+}
+
+</style>
+</head>
+
+<body>
+<div class="box">
+
+
+<h2>Cross Product Finder</h2>
+<div class="instructions">
+    <b>How to use</b><br>
+    <b>Step 1.</b> Determine your Cross Power via refraction.<br>
+    <b>Step 2.</b> Determine your Near Power via refraction.<br>
+    <b>Step 3.</b> Choose your type of design.<br>
+    <b>Step 4.</b> Follow the ordering details on the right.
+</div>
+
+<div class="inputs">
+<div>Eye Point / Cross RX - Fill in the Final RX for the Intermediate Vision </div>
+
+<div style="margin-top:2%" class="row">
+<div><label>Sphere</label><input id="s" type="number" step=".25" value="1.50"></div>
+<div><label>Cylinder</label><input id="c" type="number" step=".25" value="-1.00"></div>
+<div><label>Axis</label><input id="a" type="number" min="0" max="180" value="90"></div>
+<div><label>Add On The Cross</label><input id="add" type="number" step=".01" value="1.25"></div>
+<button onclick="search()">Search</button>
+<div>
+
+<button onclick="sortResults('add')">Sort by Add from Cross</button>
+<button onclick="sortResults('minus')">Sort by Minus from Cross</button>
+</div>
+</div>
+<div style="margin-top:2%" class="small">Matching range: ±0.13 D</div>
+</div>
+
+
+
+<div id="results"></div>
+
+</div>
+
+<script>
+const data=[
+["BOOK +1.50",.50,-.41],["BOOK +1.75",.58,-.47],
+["BOOK +2.00",.66,-.54],["BOOK +2.25",.74,-.61],
+["BOOK +2.50",.83,-.68],["BOOK +2.75",.91,-.74],
+["BOOK +3.00",.99,-.81],
+
+["PC +1.50",.75,-.30],["PC +1.75",.88,-.35],
+["PC +2.00",1,-.40],["PC +2.25",1.13,-.45],
+["PC +2.50",1.25,-.50],["PC +2.75",1.38,-.55],
+["PC +3.00",1.50,-.60],
+
+["ROOM +1.50",.90,-.38],["ROOM +1.75",1.05,-.44],
+["ROOM +2.00",1.20,-.50],["ROOM +2.25",1.35,-.56],
+["ROOM +2.50",1.50,-.63],["ROOM +2.75",1.65,-.69],
+["ROOM +3.00",1.80,-.75]
+];
+
+const f=n=>(n>=0?"+":"")+n.toFixed(2);
+const rx=(s,c,a)=>`${f(s)} ${f(c)} × ${a}°`;
+
+let found=[];
+
+function search(){
+    let s=+document.getElementById("s").value;
+    let target=+document.getElementById("add").value;
+
+    found=data
+        .map(x=>({...x,d:Math.abs(x[1]-target)}))
+        .filter(x=>x.d<=.13);
+
+    sortResults("add");
+}
+
+function sortResults(type){
+    found.sort((x,y)=>type==="add"?x[1]-y[1]:x[2]-y[2]);
+    displayResults();
+}
+
+function displayResults(){
+    let s=+document.getElementById("s").value;
+    let c=+document.getElementById("c").value;
+    let a=+document.getElementById("a").value;
+
+    document.getElementById("results").innerHTML=found.length
+    ? found.map(x=>{
+
+        let productPower=parseFloat(x[0].split(" ")[1]);
+        let addSphere=s+x[1];
+        let farSphere=Math.round((addSphere-productPower)*4)/4;
+
+        return `
+        <div class="result">
+
+            <div class="info">
+                <div class="product">${x[0]}</div>
+
+                <div class="rx">
+                    <b>Above the Cross:</b>
+                    ${rx(s+x[2],c,a)}
+                    <span>(${f(x[2])})</span>
+                </div>
+
+                <div class="rx">
+                    <b>Eye Point / Cross:</b>
+                    ${rx(s,c,a)}
+                </div>
+
+                <div class="rx">
+                    <b>At the Near Zone:</b>
+                    ${rx(addSphere,c,a)}
+                    <span>(${f(x[1])})</span>
+                </div>
+
+            </div>
+
+<div class="far">
+    <div class="rx"><b><u>
+Ordering The Lens Like This: 
+</div></b></u>
+    <div class="rx">
+        <b>Far Power:</b> ${rx(farSphere,c,a)}
+    </div>
+    <div class="rx">
+        <b>Add Type & RX:</b> ${x[0]}
+    </div>
+</div>
+
+        </div>`;
+    }).join("")
+    : `<div class="result">No matching products within ±0.13 D.</div>`;
+}
+
+document.addEventListener("keydown",e=>{
+    if(e.key==="Enter")search();
+});
+
+search();
+</script>
+
+</body>
+</html>
