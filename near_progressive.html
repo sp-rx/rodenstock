@@ -710,8 +710,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="hero">
   <div class="hero-inner">
     <div class="eyebrow-line"><span class="dot"></span>Lens Finder</div>
-    <h1>Calculator for Office Lens Design.</h1>
-    <p>Rodenstock's Office Lens.</p>
+    <h1>Near Progressive Lenses Fitter.</h1>
+    <p>Find the depth and design of your Rodenstock's Near Progressive Lens.</p>
   </div>
 </div>
 
@@ -738,10 +738,10 @@ document.addEventListener("DOMContentLoaded", function () {
 <div>Eye Point / Cross RX - Fill in the Final RX for the Intermediate Vision </div>
 
 <div style="margin-top:2%" class="row">
-<div><label>Sphere</label><input id="s" type="number" step=".25" value="1.50"></div>
-<div><label>Cylinder</label><input id="c" type="number" step=".25" value="-1.00"></div>
-<div><label>Axis</label><input id="a" type="number" min="0" max="180" value="90"></div>
-<div><label>Add At The Near</label><input id="add" type="number" step="0.25" value="1.25"></div>
+<div><label>Sphere</label><input id="s" type="number" step=".25" value=""></div>
+<div><label>Cylinder</label><input id="c" type="number" step=".25" value=""></div>
+<div><label>Axis</label><input id="a" type="number" min="0" max="180" value=""></div>
+<div><label>Add At The Near</label><input id="add" type="number" step="0.25" value=""></div>
 <button onclick="search()">Search</button>
 <div>
 
@@ -923,28 +923,20 @@ search();
 .box{}
 .inputs,.result{background:#fff;padding:18px;border-radius:10px;margin-bottom:12px}
 .row{display:flex;gap:10px;align-items:end;flex-wrap:wrap}
-label{display:block;font-size:12px;margin-bottom:4px}
-input{width:100px;padding:9px;font-size:16px}
+label{display:block;margin-bottom:4px}
+input{width:100px;padding:9px}
 button{padding:10px 20px;border:0;border-radius:6px;background:#333;color:#fff;cursor:pointer}
 .sort{display:flex;gap:8px;margin-bottom:12px}
 .result{display:flex;justify-content:space-between;align-items:center;gap:20px}
 .info{flex:1}
-.product{font-size:20px;font-weight:bold;margin-bottom:10px}
+.product{margin-bottom:10px}
 .rx{margin:5px 0}
-.small{font-size:13px;color:#666}
+.small{}
 .far{min-width:190px;padding-right:10%}
-.far-title{display:inline;font-size:inherit;font-weight:bold;margin:0}
-.far-rx{display:inline;font-size:inherit;font-weight:normal}
-.instructions{
-    background:#fff;
-    padding:14px 18px;
-    border-radius:10px;
-    margin-bottom:12px;
-    line-height:1.6;
-}
-
+.far-title{display:inline;margin:0}
+.far-rx{display:inline}
+.instructions{background:#fff;padding:14px 18px;border-radius:10px;margin-bottom:12px}
 </style>
-
 
 
 
@@ -957,4 +949,3 @@ button{padding:10px 20px;border:0;border-radius:6px;background:#333;color:#fff;c
 
 </body>
 </html>
-
