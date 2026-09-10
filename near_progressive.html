@@ -660,7 +660,76 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
 
 }
 
+.rx-tables{
+  display:grid;
+  gap:12px;
+  margin-top:15px;
+}
 
+.rx-segment{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:12px;
+  overflow-x:auto;
+}
+
+.rx-title{
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:8px;
+}
+
+.rx-segment table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.rx-segment td{
+  padding:6px 8px;
+  border-bottom:1px solid var(--line);
+  text-align:center;
+  white-space:nowrap;
+}
+
+.rx-segment td:first-child{
+  text-align:left;
+  color:var(--muted);
+  font-weight:600;
+  min-width:130px;
+}
+
+.rx-segment tr:last-child td{
+  border-bottom:0;
+}
+
+.dist-rx-header{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:12px;
+  margin:15px 0;
+}
+
+.dist-rx-title{
+  color:var(--navy);
+  font-weight:700;
+  margin-bottom:8px;
+}
+
+.dist-rx-input{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.dist-rx-input input{
+  width:25%;
+  height:15%;
+  padding:3px 3px;
+  border:1px solid var(--line);
+  border-radius:7px;
+}
 
 </style>
 </head>
@@ -746,7 +815,74 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <div style="margin-top:2%" class="row">
 <button onclick="search()">Search</button>
+<button onclick="toggleDiv('toggle-content')">Show / Hide Table</button>
 </div>
+	
+<div class="toggle-content" style="display:none">
+
+
+<div class="dist-rx-header">
+  <div class="dist-rx-title dist-rx-input">Calculate by Distance RX
+    <input id="DistRX" type="number" step=".25" value="">
+  </div>
+</div>
+
+<div class="rx-tables">
+  <div class="rx-segment">
+    <div class="rx-title">BOOK</div>
+    <table id="bookTable"><tbody></tbody></table>
+  </div>
+
+  <div class="rx-segment">
+    <div class="rx-title">PC</div>
+    <table id="pcTable"><tbody></tbody></table>
+  </div>
+
+  <div class="rx-segment">
+    <div class="rx-title">ROOM</div>
+    <table id="roomTable"><tbody></tbody></table>
+  </div>
+</div>
+</div>
+<script>
+function toggleDiv(className){
+  document.querySelectorAll("."+className).forEach(el=>{
+    el.style.display=el.style.display==="none"?"":"none";
+  });
+}
+</script>
+
+
+<script>
+const add=[1.25,1.50,1.75,2.00,2.25,2.50,2.75,3.00];
+const rates={BOOK:[.40,.67],PC:[.30,.50],ROOM:[.15,.40]};
+const d=v=>{v=Math.abs(v)<.0001?0:v;return(v>=0?"+":"")+v.toFixed(2)};
+
+function buildRXTable(){
+  const dist=+document.getElementById("DistRX").value||0;
+  Object.entries(rates).forEach(([type,[u,c]])=>{
+const rows=[
+  ["Dist RX",add.map(()=>dist)],
+  ["Add on Dist RX",add],
+
+  ["Upper Circle RX",add.map(a=>dist+a*u)],
+  ["Cross RX Eye Point",add.map(a=>dist+a*c)],
+  ["Inter RX",add.map(a=>dist+(a*c+a)/2)],
+  ["Near RX",add.map(a=>dist+a)]
+];
+    document.querySelector(`#${type.toLowerCase()}Table tbody`).innerHTML=
+      rows.map(([label,values])=>
+        `<tr><td>${label}</td>${values.map(v=>`<td>${d(v)}</td>`).join("")}</tr>`
+      ).join("");
+  });
+}
+
+document.getElementById("DistRX").addEventListener("input",buildRXTable);
+buildRXTable();
+</script>
+
+
+
 
 <div style="margin-top:2%" class="row">
 
