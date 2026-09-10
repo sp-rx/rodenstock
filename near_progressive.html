@@ -804,30 +804,24 @@ document.addEventListener("DOMContentLoaded", function () {
     <b>Step 3.</b> Choose your type of design.<br>
     <b>Step 4.</b> Follow the ordering details on the right.
 </div>
-
 <div class="inputs">
-<div>Eye Point / Cross RX - Fill in the Final RX for the Intermediate Vision </div>
 
-<div style="margin-top:2%" class="row">
-<div><label>Sphere</label><input id="s" type="number" step=".25" value=""></div>
-<div><label>Cylinder</label><input id="c" type="number" step=".25" value=""></div>
-<div><label>Axis</label><input id="a" type="number" min="0" max="180" value=""></div>
-<div><label>Add From the Cross</label><input id="add" type="number" step="0.25" value=""></div>
-</div>
-
-<div style="margin-top:2%" class="row">
-<button onclick="search()">Search</button>
-<button onclick="toggleDiv('toggle-content')">Show / Hide Table</button>
-</div>
-	
-<div class="toggle-content" style="display:none">
 
 
 <div class="dist-rx-header">
   <div class="dist-rx-title dist-rx-input">Calculate by Distance RX
     <input id="DistRX" type="number" step=".25" value="">
+
+	<button onclick="toggleDiv('toggle-content')">Show / Hide Table</button>
+
   </div>
 </div>
+
+
+<div class="toggle-content" style="display:none">
+
+
+
 
 <div class="rx-tables">
   <div class="rx-segment">
@@ -882,6 +876,24 @@ const rows=[
 document.getElementById("DistRX").addEventListener("input",buildRXTable);
 buildRXTable();
 </script>
+
+
+</div>
+
+<div class="inputs">
+<div class="dist-rx-title dist-rx-input">Eye Point / Cross RX - Fill in the Final RX for the Intermediate Vision </div>
+
+<div style="margin-top:2%" class="row">
+<div><label>Sphere</label><input id="s" type="number" step=".25" value=""></div>
+<div><label>Cylinder</label><input id="c" type="number" step=".25" value=""></div>
+<div><label>Axis</label><input id="a" type="number" min="0" max="180" value=""></div>
+<div><label>Add</label><input id="add" type="number" step="0.25" value=""></div>
+
+<button onclick="search()">Search</button>
+
+</div>
+
+
 
 
 
