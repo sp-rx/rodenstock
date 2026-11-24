@@ -208,65 +208,7 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
 }
 
 
-
-
-
-.attribute-guide{
-  margin:1% 0 1%;
-  padding:16px 18px;
-  background:var(--cloud);
-  border:1px solid var(--line);
-  border-radius:14px;
-}
-
-.attribute-guide-title{
-  display:flex;
-  align-items:baseline;
-  justify-content:space-between;
-  gap:12px;
-  margin-bottom:12px;
-}
-
-.attribute-guide-title span{
-  font-family:'Space Grotesk',Arial,sans-serif;
-  font-size:14px;
-  font-weight:700;
-  color:var(--navy);
-}
-
-.attribute-guide-title small{
-  font-size:10.5px;
-  color:var(--muted);
-}
-
-.attribute-buttons{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
-
-.attribute-category{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.attribute-category-title{
-  flex:0 0 120px;
-
-  font-size:10px;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.06em;
-
-  color:var(--muted);
-}
-
-.attribute-category-buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:7px;
-}
+/* ---------- SMALL BUTTON (calculator + card toggle) ---------- */
 
 .attribute-btn{
   border:1px solid var(--line);
@@ -288,71 +230,57 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
   color:var(--teal-dark);
 }
 
-.attribute-btn.active{
-  background:var(--navy);
-  border-color:var(--navy);
-  color:#fff;
-}
 
+/* ---------- POPUP ---------- */
 
-/* ---------- DESCRIPTION ---------- */
-
-.attribute-description{
-  margin-top:12px;
-  padding:3%;
-
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-radius:12px;
-
-  min-height:5%;
-
-  transition:opacity .15s ease;
-}
-
-.attribute-placeholder{
-  color:var(--muted);
-  font-size:11px;
-  text-align:center;
-  padding:5px 0;
-}
-
-
-/* Description content */
-
-.attribute-name{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  margin-bottom:8px;
-}
-
-.attribute-code{
-  display:inline-flex;
+.modal-overlay{
+  display:none;
+  position:absolute;
+  left:0;
+  width:100%;
+  z-index:1000;
+  background:rgba(15,27,60,.55);
   align-items:center;
   justify-content:center;
-
-  padding:4px 7px;
-  border-radius:6px;
-
-  background:var(--navy);
-  color:#fff;
-
-  font-size:10px;
-  font-weight:700;
+  padding:20px;
 }
-
-.attribute-full-name{
+.modal-overlay.open{display:flex}
+.modal-box{
+  position:relative;
+  background:#fff;
+  border-radius:16px;
+  padding:36px;
+  width:100%;
+  max-width:880px;
+  max-height:92%;
+  overflow:auto;
+}
+.modal-close{
+  position:absolute;
+  top:10px;
+  right:14px;
+  border:none;
+  background:none;
+  font-size:36px;
+  cursor:pointer;
+  color:var(--muted);
+}
+.modal-title{
   font-family:'Space Grotesk',Arial,sans-serif;
-  font-size:14px;
+  font-size:30px;
   font-weight:700;
   color:var(--navy);
+}
+.modal-sub{
+  font-size:16px;
+  color:var(--muted);
+  margin:4px 0 22px;
 }
 
 .attribute-details{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:12px;
+  gap:24px;
 }
 
 .attribute-detail{
@@ -362,7 +290,7 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
 }
 
 .attribute-detail-label{
-  font-size:9px;
+  font-size:12px;
   text-transform:uppercase;
   letter-spacing:.07em;
   font-weight:700;
@@ -370,14 +298,10 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
 }
 
 .attribute-detail-text{
-  font-size:11px;
-  line-height:1.4;
+  font-size:17px;
+  line-height:1.5;
   color:var(--ink);
 }
-
-
-
-
 
 
 /* ---------- RESULTS ---------- */
@@ -586,6 +510,8 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
   font-size:10.5px;
   font-weight:700;
   letter-spacing:.02em;
+  cursor:pointer;
+  white-space:nowrap;
   transition:opacity .15s ease, background .15s ease;
 }
 .badge.muted{
@@ -650,23 +576,12 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
     grid-template-columns:1fr;
     gap:8px;
   }
-
-  .attribute-guide-title{
-    align-items:flex-start;
-    flex-direction:column;
-    gap:3px;
-  }
-
-
 }
-
-
 
 </style>
 </head>
 
 <body>
-
 
 <div id="backgroundSlideshow">
   <img style="margin-top:26%; border-radius:2%" class="bg-image active" src="https://sp-rx.github.io/rodenstock/bg1.jpg">
@@ -674,6 +589,9 @@ h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;margin:0}
   <img style="margin-top:26%; border-radius:2%" class="bg-image" src="https://sp-rx.github.io/rodenstock/bg3.jpg">
   <img style="margin-top:26%; border-radius:2%" class="bg-image" src="https://sp-rx.github.io/rodenstock/bg4.jpg">
 </div>
+
+
+
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -745,6 +663,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </div>
  
+
+
     <div style="display:none" id="note"></div>
 
 
@@ -759,161 +679,115 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 
 
-
-
-
-
-<div style="margin-top:3%" class="attribute-guide">
-
-  <div class="attribute-guide-title">
-    <span>Click an attribute to learn more</span>
-<button class="attribute-btn" onclick="window.open('https://sp-rx.github.io/rodenstock/near_progressive.html', '_blank')">
-  Near Progressive Calculator
-</button>
-  </div>
-
-  <div class="attribute-buttons">
-
-<div class="attribute-buttons">
-
-  <div class="attribute-category">
-    <div class="attribute-category-title">
-      Clarity
-    </div>
-
-    <div class="attribute-category-buttons">
-
-      <button class="attribute-btn" onclick="showAttribute('INDILT')">
-        INDILT
-      </button>
-
-      <button class="attribute-btn" onclick="showAttribute('PO')">
-        PO
-      </button>
-
-      <button class="attribute-btn" onclick="showAttribute('BIGN')">
-        BIGN
-      </button>
-    </div>
-  </div>
-
-
-
-  <div class="attribute-category">
-    <div class="attribute-category-title">
-    Swim
-    </div>
-
-    <div class="attribute-category-buttons">
-      <button class="attribute-btn" onclick="showAttribute('3DFF')">
-        3D
-      </button>
-
-      <button class="attribute-btn" onclick="showAttribute('21BC')">
-        21BC
-      </button>
-    </div>
-  </div>
-
-
-
-  <div class="attribute-category">
-    <div class="attribute-category-title">
-      Progressive 
-    </div>
-
-    <div class="attribute-category-buttons">
-      <button class="attribute-btn" onclick="showAttribute('EYELT')">
-        EyeLT
-      </button>
-
-      <button class="attribute-btn" onclick="showAttribute('RFP')">
-        RFP
-      </button>
-
-      <button class="attribute-btn" onclick="showAttribute('PDOI')">
-        PDOI
-      </button>
-
-      <button class="attribute-btn" onclick="showAttribute('FDT')">
-        FDT
-      </button>
-    </div>
-  </div>
-
+<div style="margin-top:3%">
+  <button class="attribute-btn" onclick="window.open('https://sp-rx.github.io/rodenstock/near_progressive.html', '_blank')">
+    Near Progressive Calculator
+  </button>
 </div>
-
-  </div>
-
-  <div id="attributeDescription" class="attribute-description">
-    <div class="attribute-placeholder">
-      Select an attribute above
-    </div>
-  </div>
 
 </div>
 
 
-
-
-
+<!-- POPUP -->
+<div id="attributeModal" class="modal-overlay" onclick="if(event.target===this)closeAttribute()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeAttribute()">×</button>
+    <div id="attributeModalBody"></div>
+  </div>
 </div>
+
 
 <script>
 
-/* ATTRIBUTE GUIDE */
+/* =====================================================
+   ALL WORDING LIVES IN THIS SECTION.
+   Edit text here and it updates everywhere on the page.
+   ===================================================== */
 
+/* Vision type names (keys must match the TYPE column in the CSV) */
+const visionLabels = {
+  SV:   "SINGLE VISION",
+  PAL:  "PROGRESSIVE",
+  AF:   "ANTI-FATIGUE",
+  NPAL: "NEAR PROGRESSIVE",
+  MYO:  "MYOPIA CONTROL"
+};
+const visionTypes = Object.keys(visionLabels);
+
+/* Section headings: "filter" = filter panel, "card" = tags on each lens card */
+const groupTitles = {
+  clarity:       { filter: "Clarity",                 card: "Sharper Vision" },
+  manufacturing: { filter: "Stability",               card: "Stable in Motion" },
+  nearVision:    { filter: "Near Vision Enhancement", card: "Near Vision Experience" },
+  palDesign:     { filter: "PAL Design",              card: "Progressive Design" }
+};
+
+/* Optional display names for materials (only list the ones that differ) */
+const materialDisplay = {
+  "PRO 410": "PRO410"
+};
+
+/* Technology names + popup text (shown on filter buttons, card badges and popup) */
 const attributeInfo={
 
   EYELT:{
+    label:"High RX Corrector",
     name:"Eye Lens Technology",
     function:"Optics Calculation which Compensates for Lens Tilting at the Near Zone.",
     benefit:"Clearer and Higher Definition of Near Vision."
   },
 
   "3DFF":{
+    label:"Aspheric Surface",
     name:"3D Free Form",
     function:"Advance Manufacturing Method which is Able to be Precise and Demanding.",
     benefit:"Every Prescription and Frame are Optimized to have the Best Experience in Clarity & View."
   },
 
   RFP:{
+    label:"Smoother Zones",
     name:"Retina Focus Principle",
     function:"Optics Calculation which Compensates for the Downward Progression of Addition.",
     benefit:"Smoother and Larger Progression of Near Vision."
   },
 
   "21BC":{
+    label:"Stable Side View",
     name:"21 Base Curve",
     function:"Larger Array of Lens Blank to Cater to Any Prescription.",
     benefit:"Every Lens is Optimized for Swim Effect, Magnification and Clarity."
   },
 
   PDOI:{
+    label:"Widest Near Zone",
     name:"PD Optimized Inset",
     function:"Customized Near Zone Positioning for Different Wearers.",
     benefit:"Redesign the Near Zone to Fit Your Preferred Position."
   },
 
   FDT:{
+    label:"Design Your Zone",
     name:"Flexible Design Technology",
     function:"Lenses Re-Designed to have Wider Far or Near Vision.",
     benefit:"Make Your Lenses See More Far or More Near."
   },
 
   INDILT:{
+    label:"High RX Corrector",
     name:"Individual Lens Technology",
     function:"Compensates for the Spectacle's Tilt, Wrap and Distance from the Eye.",
     benefit:"See as Clear as Possible by Reducing Errors Caused by Spectacles Position."
   },
 
   PO:{
+    label:"Clearer Night Vision",
     name:"Pupil Optimization",
     function:"Prescription is Calculated Based Pupil Size to Reduce Abberations.",
     benefit:"Improves Clarity during Low Light, When Pupils are Larger."
   },
 
   BIGN:{
+    label:"The Real World",
     name:"Big Norm",
     function:"Optical Calculation to Compensate for Every Eye's Rotation Angle, Size and Thickness.",
     benefit:"A Further Advancement to Achieve Optimized and Natural Vision for Every Prescription."
@@ -922,153 +796,84 @@ const attributeInfo={
 };
 
 
-let activeAttribute = "";
+/* =====================================================
+   STRUCTURE (no wording here)
+   ===================================================== */
+
+/* Must match the MATERIAL column in the CSV exactly */
+const materials=[
+  "UV 400",
+  "PRO 410",
+  "COLORMATIC",
+  "COLORMATIC SUN",
+  "POLARISED",
+  "ROAD"
+];
+
+/* Which technologies belong to which group (labels come from attributeInfo) */
+const filterDefinitions={
+  clarity:       ["BIGN","INDILT","PO"],
+  manufacturing: ["3DFF","21BC"],
+  nearVision:    ["EYELT","RFP","PDOI"],
+  palDesign:     ["FDT"]
+};
+
+
+/* POPUP */
 
 function showAttribute(key){
 
-  const attributeImages = [
-    "3DFF",
-    "21BC",
-    "INDILT",
-    "PO",
-    "BIGN",
-    "EYELT",
-    "RFP",
-    "PDOI",
-    "FDT"
-  ];
-
-  /* Preload images */
-  attributeImages.forEach(key => {
-    const img = new Image();
-    img.src = `https://sp-rx.github.io/rodenstock/${key}.jpg`;
-  });
-
-  /* CLICK SAME BUTTON AGAIN = OFF */
-  if(activeAttribute === key){
-    activeAttribute = "";
-
-    document
-      .querySelectorAll(".attribute-btn")
-      .forEach(btn => btn.classList.remove("active"));
-
-    document.getElementById("attributeDescription").innerHTML = `
-      <div class="attribute-placeholder">
-        Select an attribute above
-      </div>
-    `;
-
-    return;
-  }
-
-  /* New attribute selected */
-  activeAttribute = key;
-
-  /* Remove active state from all buttons */
-  document
-    .querySelectorAll(".attribute-btn")
-    .forEach(btn => btn.classList.remove("active"));
-
-  /* Activate clicked button */
-  document.querySelectorAll(".attribute-btn").forEach(btn => {
-
-    const label = btn.textContent.trim();
-
-    const code =
-      label === "3D" ? "3DFF" :
-      label === "EyeLT" ? "EYELT" :
-      label;
-
-    if(code === key){
-      btn.classList.add("active");
-    }
-
-  });
-
   const info = attributeInfo[key];
-
   if(!info) return;
 
-  /* Build description */
-  document.getElementById("attributeDescription").innerHTML = `
-
-    <div class="attribute-name">
-
-      <span class="attribute-code">
-        ${key === "3DFF" ? "3D" : key}
-      </span>
-
-      <span class="attribute-full-name">
-        ${info.name}
-      </span>
-
-    </div>
+  document.getElementById("attributeModalBody").innerHTML = `
+    <div class="modal-title">${info.label}</div>
+    <div class="modal-sub">${info.name}</div>
 
     <div class="attribute-details">
-
       <div class="attribute-detail">
-
-        <span class="attribute-detail-label">
-          What it does
-        </span>
-
-        <span class="attribute-detail-text">
-          ${info.function}
-        </span>
-
+        <span class="attribute-detail-label">What it does</span>
+        <span class="attribute-detail-text">${info.function}</span>
       </div>
-
       <div class="attribute-detail">
-
-        <span class="attribute-detail-label">
-          Benefit
-        </span>
-
-        <span class="attribute-detail-text">
-          ${info.benefit}
-        </span>
-
+        <span class="attribute-detail-label">Benefit</span>
+        <span class="attribute-detail-text">${info.benefit}</span>
       </div>
-
     </div>
 
-    <img
-      style="margin-top:5%; margin-bottom:3%; width:100%"
-      src="https://sp-rx.github.io/rodenstock/${key}.jpg"
-      alt="${key}"
-      class="attribute-image"
-    >
-
+    <img style="margin-top:28px;width:100%" src="https://sp-rx.github.io/rodenstock/${key}.jpg" alt="${info.label}">
   `;
+
+  /* body is scaled 0.8, so position the overlay manually over the visible screen */
+  const overlay = document.getElementById("attributeModal");
+  overlay.style.top = (window.scrollY / 0.8) + "px";
+  overlay.style.height = (window.innerHeight / 0.8) + "px";
+  overlay.classList.add("open");
+  document.documentElement.style.overflow = "hidden";
 }
 
+function closeAttribute(){
+  document.getElementById("attributeModal").classList.remove("open");
+  document.documentElement.style.overflow = "";
+}
+
+document.addEventListener("keydown", e => {
+  if(e.key === "Escape") closeAttribute();
+});
+
+
+/* PRELOAD ALL IMAGES ON PAGE LOAD */
+(function preloadAll(){
+  const base="https://sp-rx.github.io/rodenstock/";
+  const names=["bg1","bg2","bg3","bg4","3DFF","21BC","INDILT","PO","BIGN","EYELT","RFP","PDOI","FDT"];
+  window._preloaded=names.map(n=>{
+    const img=new Image();
+    img.src=base+n+".jpg";
+    return img;
+  });
+})();
 
 const CSV_URL="https://sp-rx.github.io/rodenstock/roden.csv";
-const visionTypes = ["SV", "PAL", "AF", "NPAL", "MYO"];
-
-const visionLabels = {
-  SV: "SINGLE VISION",
-  PAL: "PROGRESSIVE",
-  AF: "ANTI-FATIGUE",
-  NPAL: "NEAR PROGRESSIVE",
-  MYO: "MYOPIA CONTROL"
-};
-
-
-const materials=[
-"UV 400",
-"PRO 410",
-"COLORMATIC",
-"COLORMATIC SUN",
-"POLARISED",
-"ROAD"
-];
-
-const filterDefinitions={
-clarity:[["BIGN","BIGN"],["21BC","21BC"],["INDILT","INDILT"],["PO","PO"]],
-nearVision:[["EYELT","EYELT"],["RFP","RFP"],["PDOI","PDOI"]],
-palDesign:[["FDT","FDT"]]
-};
 
 let lenses=[];
 let selectedType="";
@@ -1076,6 +881,7 @@ let selectedMaterial="";
 
 let selected={
 clarity:new Set(),
+manufacturing:new Set(),
 nearVision:new Set(),
 palDesign:new Set()
 };
@@ -1161,7 +967,7 @@ function renderMaterial(){
 }
 
 
-/* OTHER FILTERS - UNCHANGED MULTI SELECT */
+/* OTHER FILTERS - MULTI SELECT */
 
 function toggle(set,key){
 set.has(key)?set.delete(key):set.add(key);
@@ -1169,59 +975,40 @@ render();
 }
 
 function filterGroup(title,key,items){
-return `
-<div class="filter">
-<h3>${title}</h3>
-<div class="buttons">
-${items.map(([k,label])=>{
-const active=selected[key].has(k);
-return button(
-label,
-active,
-`toggle(selected["${key}"],"${k}")`,
-true
-);
-}).join("")}
-</div>
-</div>
-`;
+  return `
+  <div class="filter">
+    <h3>${title}</h3>
+    <div class="buttons">
+      ${items.map(k=>{
+        const active=selected[key].has(k);
+        return button(
+          attributeInfo[k].label,
+          active,
+          `toggle(selected["${key}"],"${k}")`,
+          true
+        );
+      }).join("")}
+    </div>
+  </div>`;
 }
 
 
 /* CONDITIONAL FILTERS */
 
 function renderConditional(){
+  const el=document.getElementById("conditionalFilters");
+  if(!selectedType){ el.innerHTML=""; return; }
 
-const el=document.getElementById("conditionalFilters");
+  let html=filterGroup(groupTitles.clarity.filter,"clarity",filterDefinitions.clarity);
+  html+=filterGroup(groupTitles.manufacturing.filter,"manufacturing",filterDefinitions.manufacturing);
 
-if(!selectedType){
-el.innerHTML="";
-return;
-}
-
-let html=filterGroup(
-"Clarity",
-"clarity",
-filterDefinitions.clarity
-);
-
-if(["PAL","AF","NPAL"].includes(selectedType)){
-html+=filterGroup(
-"Near Vision Enhancement",
-"nearVision",
-filterDefinitions.nearVision
-);
-}
-
-if(selectedType==="PAL"){
-html+=filterGroup(
-"PAL Design",
-"palDesign",
-filterDefinitions.palDesign
-);
-}
-
-el.innerHTML=html;
+  if(["PAL","AF","NPAL"].includes(selectedType)){
+    html+=filterGroup(groupTitles.nearVision.filter,"nearVision",filterDefinitions.nearVision);
+  }
+  if(selectedType==="PAL"){
+    html+=filterGroup(groupTitles.palDesign.filter,"palDesign",filterDefinitions.palDesign);
+  }
+  el.innerHTML=html;
 }
 
 
@@ -1245,8 +1032,17 @@ for(const key of selected.clarity){
 if(!hasTech(lens,key))return false;
 }
 
+for(const key of selected.manufacturing){
+if(!hasTech(lens,key))return false;
+}
+
 for(const key of selected.nearVision){
 if(!hasTech(lens,key))return false;
+}
+
+
+for(const key of selected.palDesign){
+  if(key==="FDT" && !getFDT(lens)) return false;
 }
 
 
@@ -1258,84 +1054,35 @@ return true;
 
 function techTags(lens){
 
-  const clarity=[
-    ["BIGN","BIGN"],
-    ["INDILT","INDILT"],
-    ["PO","PO"],
-  ];
-
-  const swim=[
-    ["21BC","21BC"],
-    ["3DFF","3D"]
-  ];
-
-  const nearVision=[
-    ["EYELT","EyeLT"],
-    ["RFP","RFP"],
-    ["PDOI","PDOI"]
-  ];
-
-  const palDesign=[
-    ["FDT","FDT"]
-  ];
-
-  function group(title,items){
-
-    const badges=items.map(([key,label])=>{
-
-      /* FDT: directly fetch the CSV cell */
-      if(key==="FDT"){
-
-        const fdt = getFDT(lens);
-
-        return `
-          <span class="badge fdt ${fdt ? "" : "muted"}">
-            ${fdt || label}
-          </span>
-        `;
-      }
-
-      /* Other technologies still use Y/N */
-      const active=hasTech(lens,key);
-
+  function group(titleKey, keys){
+    const badges = keys.map(key=>{
+      const active = key==="FDT" ? !!getFDT(lens) : hasTech(lens,key);
       return `
-        <span class="badge ${active ? "" : "muted"}">
-          ${label}
-        </span>
-      `;
-
+        <span class="badge ${key==="FDT" ? "fdt" : ""} ${active ? "" : "muted"}"
+          onclick="showAttribute('${key}')">
+          ${attributeInfo[key].label}
+        </span>`;
     }).join("");
 
     return `
       <div class="tech-group">
-        <div class="tech-label">${title}</div>
-        <div class="tech-items">
-          ${badges}
-        </div>
-      </div>
-    `;
+        <div class="tech-label">${groupTitles[titleKey].card}</div>
+        <div class="tech-items">${badges}</div>
+      </div>`;
   }
 
-  let html="";
+  let html = group("clarity", filterDefinitions.clarity)
+           + group("manufacturing", filterDefinitions.manufacturing);
 
-  /* CLARITY */
-  html+=group("Clarity Enhancement",clarity);
-
-  /* SWIM */
-  html+=group("Swim Effect Reduction",swim);
-
-  /* NEAR VISION */
   if(["PAL","AF","NPAL"].includes(lens.TYPE)){
-    html+=group("Near Vision Improvement",nearVision);
+    html += group("nearVision", filterDefinitions.nearVision);
   }
-
-  /* PAL DESIGN */
   if(lens.TYPE==="PAL"){
-    html+=group("PAL Design",palDesign);
+    html += group("palDesign", filterDefinitions.palDesign);
   }
-
   return html;
 }
+
 
 
 /* PRICE */
@@ -1347,18 +1094,9 @@ return `<span>RM ${Number(value).toLocaleString()}</span>`;
 
 
 /* CARD */
-function visionLabel(type){
-return {
-SV:"SINGLE VISION",
-PAL:"PROGRESSIVE",
-AF:"ANTI-FATIGUE",
-NPAL:"NEAR PROGRESSIVE",
-MYO:"MYOPIA CONTROL"
-}[type]||type;
-}
 
 function materialLabel(material){
-return material==="PRO 410"?"PRO410":material;
+  return materialDisplay[material] || material;
 }
 
 function getFurtherDesc(lens){
@@ -1386,7 +1124,7 @@ function card(lens){
 
       <h2>
         ${lens.PRODUCT}<br>
-${visionLabel(lens.TYPE)}
+${visionLabels[lens.TYPE] || lens.TYPE}
         ${materialLabel(lens.MATERIAL)}<br>
 <span style="font-size:15px"><i>${furtherDesc}</i></span>
       </h2>
@@ -1518,21 +1256,6 @@ function toggleCard(card){
     button.textContent = "_";
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </script>
 
