@@ -716,8 +716,8 @@ const visionTypes = Object.keys(visionLabels);
 
 /* Section headings: "filter" = filter panel, "card" = tags on each lens card */
 const groupTitles = {
-  clarity:       { filter: "Clarity",                 card: "Sharper Vision" },
-  manufacturing: { filter: "Stability",               card: "Stable in Motion" },
+  clarity:       { filter: "Clarity",                 card: "Even Sharper Vision" },
+  manufacturing: { filter: "Stability",               card: "Even More Stable" },
   nearVision:    { filter: "Near Vision Enhancement", card: "Near Vision Experience" },
   palDesign:     { filter: "PAL Design",              card: "Progressive Design" }
 };
@@ -780,7 +780,7 @@ const attributeInfo={
   },
 
   PO:{
-    label:"Clearer Night Vision",
+    label:"Astigmatism Corrector",
     name:"Pupil Optimization",
     function:"Prescription is Calculated Based Pupil Size to Reduce Abberations.",
     benefit:"Improves Clarity during Low Light, When Pupils are Larger."
@@ -1224,7 +1224,7 @@ renderResults
 fetch(CSV_URL)
 
 .then(response=>{
-if(!response.ok)throw new Error("Could not retrieve roden.csv");
+if(!response.ok)throw new Error("Not Retrieved");
 return response.text();
 })
 
@@ -1235,7 +1235,7 @@ render();
 
 .catch(error=>{
 document.getElementById("results").innerHTML=
-`<div class="error">${error.message}. Check that the CSV is publicly accessible on GitHub.</div>`;
+`<div class="error">${error.message}. Check CSV.</div>`;
 });
 
 
